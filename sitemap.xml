@@ -86,11 +86,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/NamedThing/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://stroemphi.github.io/DefinedTermSet_profile/Ncname/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
@@ -102,21 +97,6 @@
     </url>
     <url>
          <loc>https://stroemphi.github.io/DefinedTermSet_profile/Objectidentifier/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Person/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/PersonCollection/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/PersonStatus/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -156,27 +136,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/age_in_years/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://stroemphi.github.io/DefinedTermSet_profile/alternateName/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/birth_date/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://stroemphi.github.io/DefinedTermSet_profile/description/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/entries/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -201,11 +166,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/primary_email/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://stroemphi.github.io/DefinedTermSet_profile/sameAs/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
@@ -217,11 +177,6 @@
     </url>
     <url>
          <loc>https://stroemphi.github.io/DefinedTermSet_profile/url/</loc>
-         <lastmod>2023-12-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/vital_status/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
