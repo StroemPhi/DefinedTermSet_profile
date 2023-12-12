@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "definedtermset_profile"
+name = "definedterm_profile"
 version = "0.1.0"
-description = "A LinkML schema to define a profile for the DefinedTermSet class from Schema.org."
+description = "A LinkML schema to define a profile for the DefinedTerm class from Schema.org."
 authors = ["Philip Stroemert <philip.stroemert@tib.eu>"]
 license = "MIT"
 readme = "README.md"
-include = ["README.md", "src/definedtermset_profile/schema", "project"]
+include = ["README.md", "src/definedterm_profile/schema", "project"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
