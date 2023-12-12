@@ -54,9 +54,21 @@ classes:
     tree_root: true
     class_uri: schema:DefinedTerm
     is_a: Intangible
-    slots:
-      - inDefinedTermSet
-      - termCode
+    attributes:
+      inDefinedTermSet:
+        slot_uri: schema:inDefinedTermSet
+        description: A DefinedTermSet that contains this term.
+        range: uriorcurie
+        required: true
+        exact_mappings:
+          - dct:conformsTo
+      termCode:
+        slot_uri: schema:termCode
+        description: A code that identifies this DefinedTerm within a DefinedTermSet.
+        required: true
+        comments:
+          - In the REST response of an OLS based look-up service (e.g. https://service.tib.eu/ts4tib/api/) this would
+            correspond to the `short_form` key.
     description: >-
       A word, name, acronym, phrase, etc. with a formal definition. Often used in
       the context of category or subject classification, glossaries or dictionaries,
@@ -67,8 +79,11 @@ classes:
   DefinedTermSet:
     class_uri: schema:DefinedTermSet
     is_a: CreativeWork
-    slots:
-      - hasDefinedTerm
+    attributes:
+      hasDefinedTerm:
+        slot_uri: schema:hasDefinedTerm
+        range: DefinedTerm
+        description: A Defined Term contained in this term set.
     description: >-
       A set of defined terms for example a set of categories or a classification scheme,
       a glossary, dictionary or enumeration.
@@ -114,26 +129,3 @@ slots:
     slot_uri: schema:url
     description: URL of the item.
     range: uriorcurie
-
-# DefinedTerm slots
-  inDefinedTermSet:
-    slot_uri: schema:inDefinedTermSet
-    description: A DefinedTermSet that contains this term.
-    range: DefinedTermSet
-    required: true
-    exact_mappings:
-      - dct:conformsTo
-
-  termCode:
-    slot_uri: schema:termCode
-    description: A code that identifies this DefinedTerm within a DefinedTermSet.
-    required: true
-    comments:
-      - In the REST response of an OLS based look-up service (e.g. https://service.tib.eu/ts4tib/api/) this would
-        correspond to the `short_form` key.
-
-  # DefinedTermSet slots
-  hasDefinedTerm:
-    slot_uri: schema:hasDefinedTerm
-    range: DefinedTerm
-    description: A Defined Term contained in this term set.
