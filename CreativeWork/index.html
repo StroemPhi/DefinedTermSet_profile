@@ -200,6 +200,7 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="class-creativework">Class: CreativeWork</h1>
+<p><em>The most generic kind of creative work, including books, movies, photographs, software programs, etc.</em></p>
 <p>URI: <a href="http://schema.org/CreativeWork">schema:CreativeWork</a></p>
 <div class="mermaid"> classDiagram
     class CreativeWork
@@ -253,19 +254,19 @@
 <tr>
 <td><a href="../alternateName/">alternateName</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>An alias for the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
+<td>A description of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
+<td>The name of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -311,6 +312,8 @@
 <h3 id="direct">Direct</h3>
 <details>
 <pre><code class="language-yaml">name: CreativeWork
+description: The most generic kind of creative work, including books, movies, photographs,
+  software programs, etc.
 from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
 is_a: Thing
 class_uri: schema:CreativeWork
@@ -320,6 +323,8 @@ class_uri: schema:CreativeWork
 <h3 id="induced">Induced</h3>
 <details>
 <pre><code class="language-yaml">name: CreativeWork
+description: The most generic kind of creative work, including books, movies, photographs,
+  software programs, etc.
 from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
 is_a: Thing
 attributes:
@@ -338,6 +343,7 @@ attributes:
     required: true
   alternateName:
     name: alternateName
+    description: An alias for the item.
     from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
     rank: 1000
     slot_uri: schema:alternateName
@@ -348,7 +354,7 @@ attributes:
     range: string
   description:
     name: description
-    description: A human-readable description for a thing
+    description: A description of the item.
     from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
     rank: 1000
     slot_uri: schema:description
@@ -359,7 +365,7 @@ attributes:
     range: string
   name:
     name: name
-    description: A human-readable name for a thing
+    description: The name of the item.
     from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
     rank: 1000
     slot_uri: schema:name

@@ -254,19 +254,19 @@
 <tr>
 <td><a href="../alternateName/">alternateName</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td></td>
+<td>An alias for the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable description for a thing</td>
+<td>A description of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
+<td>The name of the item</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -343,6 +343,7 @@ attributes:
     required: true
   alternateName:
     name: alternateName
+    description: An alias for the item.
     from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
     rank: 1000
     slot_uri: schema:alternateName
@@ -353,7 +354,7 @@ attributes:
     range: string
   description:
     name: description
-    description: A human-readable description for a thing
+    description: A description of the item.
     from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
     rank: 1000
     slot_uri: schema:description
@@ -364,7 +365,7 @@ attributes:
     range: string
   name:
     name: name
-    description: A human-readable name for a thing
+    description: The name of the item.
     from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
     rank: 1000
     slot_uri: schema:name
