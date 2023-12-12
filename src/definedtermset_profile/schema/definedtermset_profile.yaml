@@ -23,31 +23,50 @@ imports:
 
 classes:
 
-  NamedThing:
-    description: >-
-      A generic grouping for any identifiable entity
+  Thing:
+    class_uri: schema:Thing
     slots:
       - id
-      - name
+      - alternateName
       - description
-    class_uri: schema:Thing
-
-  Person:
-    is_a: NamedThing
+      - name
+      - sameAs
+      - url
     description: >-
-      Represents a Person
+      The most generic type of item.
+
+  Intangible:
+    class_uri: schema:Intangible
+    is_a: Thing
+    description: >-
+      A utility class that serves as the umbrella for a number of 'intangible' things
+      such as quantities, structured values, etc.
+
+  CreativeWork:
+    class_uri: schema:CreativeWork
+    is_a: Thing
+
+  DefinedTerm:
+    class_uri: schema:DefinedTerm
+    is_a: Intangible
     slots:
-
-
-  PersonCollection:
-    tree_root: true
+      - inDefinedTermSet
+      - termCode
     description: >-
-      A holder for Person objects
-    attributes:
-      entries:
-        range: Person
-        multivalued: true
-        inlined: true
+      A word, name, acronym, phrase, etc. with a formal definition. Often used in
+      the context of category or subject classification, glossaries or dictionaries,
+      product or creative work types, etc. Use the name property for the term being
+      defined, use termCode if the term has an alpha-numeric code allocated, use description
+      to provide the definition of the term.
+
+  DefinedTermSet:
+    class_uri: schema:DefinedTermSet
+    is_a: CreativeWork
+    slots:
+      - hasDefinedTerm
+    description: >-
+      A set of defined terms for example a set of categories or a classification scheme,
+      a glossary, dictionary or enumeration.
 
 slots:
   id:
@@ -58,8 +77,27 @@ slots:
   name:
     slot_uri: schema:name
     description: A human-readable name for a thing
+  alternateName:
+    slot_uri: schema:alternateName
   description:
     slot_uri: schema:description
     description: A human-readable description for a thing
-
-enums:
+  sameAs:
+    slot_uri: schema:sameAs
+    description:  >-
+      URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+  inDefinedTermSet:
+    slot_uri: schema:inDefinedTermSet
+    description: A DefinedTermSet that contains this term.
+    range: DefinedTermSet
+  url:
+    slot_uri: schema:url
+    description: URL of the item.
+    range: uriorcurie
+  termCode:
+    slot_uri: schema:termCode
+    description: A code that identifies this DefinedTerm within a DefinedTermSet.
+  hasDefinedTerm:
+    slot_uri: schema:hasDefinedTerm
+    range: DefinedTerm
+    description: A Defined Term contained in this term set.

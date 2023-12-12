@@ -3,7 +3,19 @@
    "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
    "schema": "http://schema.org/",
-   "NamedThing": {
+   "CreativeWork": {
+      "@id": "schema:CreativeWork"
+   },
+   "DefinedTerm": {
+      "@id": "schema:DefinedTerm"
+   },
+   "DefinedTermSet": {
+      "@id": "schema:DefinedTermSet"
+   },
+   "Intangible": {
+      "@id": "schema:Intangible"
+   },
+   "Thing": {
       "@id": "schema:Thing"
    }
 }

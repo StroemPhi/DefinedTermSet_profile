@@ -1,19 +1,53 @@
-type NamedThing
+type CreativeWork
   {
     id: Uriorcurie!
-    name: String
+    alternateName: String
     description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
   }
 
-type Person
+type DefinedTerm
   {
     id: Uriorcurie!
-    name: String
+    alternateName: String
     description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+    inDefinedTermSet: DefinedTermSet
+    termCode: String
   }
 
-type PersonCollection
+type DefinedTermSet
   {
-    entries: [Person]
+    id: Uriorcurie!
+    alternateName: String
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+    hasDefinedTerm: DefinedTerm
+  }
+
+type Intangible
+  {
+    id: Uriorcurie!
+    alternateName: String
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
+  }
+
+type Thing
+  {
+    id: Uriorcurie!
+    alternateName: String
+    description: String
+    name: String
+    sameAs: String
+    url: Uriorcurie
   }
 

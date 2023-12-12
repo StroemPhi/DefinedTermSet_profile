@@ -136,3 +136,6 @@ dmypy.json
 .idea/workspace.xml
 .idea/DefinedTermSet_profile.iml
 .idea/workspace.xml
+.idea/codeStyles/codeStyleConfig.xml
+.idea/DefinedTermSet_profile.iml
+.idea/jsonSchemas.xml

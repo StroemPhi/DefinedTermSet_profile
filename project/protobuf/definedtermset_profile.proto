@@ -1,19 +1,52 @@
-// A generic grouping for any identifiable entity
-message NamedThing
+message CreativeWork
  {
   uriorcurie id = 0
-  string name = 0
+  string alternateName = 0
   string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
  }
-// Represents a Person
-message Person
+// A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.
+message DefinedTerm
  {
   uriorcurie id = 0
-  string name = 0
+  string alternateName = 0
   string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+  definedTermSet inDefinedTermSet = 0
+  string termCode = 0
  }
-// A holder for Person objects
-message PersonCollection
+// A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.
+message DefinedTermSet
  {
- repeated  person entries = 0
+  uriorcurie id = 0
+  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+  definedTerm hasDefinedTerm = 0
+ }
+// A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.
+message Intangible
+ {
+  uriorcurie id = 0
+  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
+ }
+// The most generic type of item.
+message Thing
+ {
+  uriorcurie id = 0
+  string alternateName = 0
+  string description = 0
+  string name = 0
+  string sameAs = 0
+  uriorcurie url = 0
  }

@@ -1,20 +1,56 @@
 
 
-CREATE TABLE "NamedThing" (
+CREATE TABLE "CreativeWork" (
 	id TEXT NOT NULL, 
-	name TEXT, 
+	"alternateName" TEXT, 
 	description TEXT, 
+	name TEXT, 
+	"sameAs" TEXT, 
+	url TEXT, 
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE "Person" (
+CREATE TABLE "DefinedTerm" (
 	id TEXT NOT NULL, 
-	name TEXT, 
+	"alternateName" TEXT, 
 	description TEXT, 
+	name TEXT, 
+	"sameAs" TEXT, 
+	url TEXT, 
+	"inDefinedTermSet" TEXT, 
+	"termCode" TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("inDefinedTermSet") REFERENCES "DefinedTermSet" (id)
+);
+
+CREATE TABLE "DefinedTermSet" (
+	id TEXT NOT NULL, 
+	"alternateName" TEXT, 
+	description TEXT, 
+	name TEXT, 
+	"sameAs" TEXT, 
+	url TEXT, 
+	"hasDefinedTerm" TEXT, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("hasDefinedTerm") REFERENCES "DefinedTerm" (id)
+);
+
+CREATE TABLE "Intangible" (
+	id TEXT NOT NULL, 
+	"alternateName" TEXT, 
+	description TEXT, 
+	name TEXT, 
+	"sameAs" TEXT, 
+	url TEXT, 
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE "PersonCollection" (
-	entries TEXT, 
-	PRIMARY KEY (entries)
+CREATE TABLE "Thing" (
+	id TEXT NOT NULL, 
+	"alternateName" TEXT, 
+	description TEXT, 
+	name TEXT, 
+	"sameAs" TEXT, 
+	url TEXT, 
+	PRIMARY KEY (id)
 );

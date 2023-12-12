@@ -354,9 +354,9 @@
       ],
       "slot_uri": "http://schema.org/identifier",
       "identifier": true,
-      "owner": "NamedThing",
+      "owner": "Thing",
       "domain_of": [
-        "NamedThing"
+        "Thing"
       ],
       "range": "uriorcurie",
       "required": true,
@@ -371,9 +371,24 @@
         "http://schema.org/name"
       ],
       "slot_uri": "http://schema.org/name",
-      "owner": "NamedThing",
+      "owner": "Thing",
       "domain_of": [
-        "NamedThing"
+        "Thing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "alternateName",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/alternateName",
+      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "http://schema.org/alternateName"
+      ],
+      "slot_uri": "http://schema.org/alternateName",
+      "owner": "Thing",
+      "domain_of": [
+        "Thing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
@@ -387,89 +402,207 @@
         "http://schema.org/description"
       ],
       "slot_uri": "http://schema.org/description",
-      "owner": "NamedThing",
+      "owner": "Thing",
       "domain_of": [
-        "NamedThing"
+        "Thing"
       ],
       "range": "string",
       "@type": "SlotDefinition"
     },
     {
-      "name": "personCollection__entries",
+      "name": "sameAs",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/sameAs",
+      "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "slot_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/entries",
-      "multivalued": true,
-      "alias": "entries",
-      "owner": "PersonCollection",
-      "domain_of": [
-        "PersonCollection"
+      "mappings": [
+        "http://schema.org/sameAs"
       ],
-      "range": "Person",
-      "inlined": true,
+      "slot_uri": "http://schema.org/sameAs",
+      "owner": "Thing",
+      "domain_of": [
+        "Thing"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "inDefinedTermSet",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/inDefinedTermSet",
+      "description": "A DefinedTermSet that contains this term.",
+      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "http://schema.org/inDefinedTermSet"
+      ],
+      "slot_uri": "http://schema.org/inDefinedTermSet",
+      "owner": "DefinedTerm",
+      "domain_of": [
+        "DefinedTerm"
+      ],
+      "range": "DefinedTermSet",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "url",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/url",
+      "description": "URL of the item.",
+      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "http://schema.org/url"
+      ],
+      "slot_uri": "http://schema.org/url",
+      "owner": "Thing",
+      "domain_of": [
+        "Thing"
+      ],
+      "range": "uriorcurie",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "termCode",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/termCode",
+      "description": "A code that identifies this DefinedTerm within a DefinedTermSet.",
+      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "http://schema.org/termCode"
+      ],
+      "slot_uri": "http://schema.org/termCode",
+      "owner": "DefinedTerm",
+      "domain_of": [
+        "DefinedTerm"
+      ],
+      "range": "string",
+      "@type": "SlotDefinition"
+    },
+    {
+      "name": "hasDefinedTerm",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/hasDefinedTerm",
+      "description": "A Defined Term contained in this term set.",
+      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "http://schema.org/hasDefinedTerm"
+      ],
+      "slot_uri": "http://schema.org/hasDefinedTerm",
+      "owner": "DefinedTermSet",
+      "domain_of": [
+        "DefinedTermSet"
+      ],
+      "range": "DefinedTerm",
       "@type": "SlotDefinition"
     }
   ],
   "classes": [
     {
-      "name": "NamedThing",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/NamedThing",
-      "description": "A generic grouping for any identifiable entity",
+      "name": "Thing",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/Thing",
+      "description": "The most generic type of item.",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
       "mappings": [
         "schema:Thing"
       ],
       "slots": [
         "id",
+        "alternateName",
+        "description",
         "name",
-        "description"
+        "sameAs",
+        "url"
       ],
       "slot_usage": {},
       "class_uri": "http://schema.org/Thing",
       "@type": "ClassDefinition"
     },
     {
-      "name": "Person",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/Person",
-      "description": "Represents a Person",
+      "name": "Intangible",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/Intangible",
+      "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "is_a": "NamedThing",
+      "mappings": [
+        "schema:Intangible"
+      ],
+      "is_a": "Thing",
       "slots": [
         "id",
+        "alternateName",
+        "description",
         "name",
-        "description"
+        "sameAs",
+        "url"
       ],
       "slot_usage": {},
-      "class_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/Person",
+      "class_uri": "http://schema.org/Intangible",
       "@type": "ClassDefinition"
     },
     {
-      "name": "PersonCollection",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/PersonCollection",
-      "description": "A holder for Person objects",
+      "name": "CreativeWork",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/CreativeWork",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "schema:CreativeWork"
+      ],
+      "is_a": "Thing",
       "slots": [
-        "personCollection__entries"
+        "id",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url"
       ],
       "slot_usage": {},
-      "attributes": [
-        {
-          "name": "entries",
-          "multivalued": true,
-          "range": "Person",
-          "inlined": true,
-          "@type": "SlotDefinition"
-        }
+      "class_uri": "http://schema.org/CreativeWork",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DefinedTerm",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/DefinedTerm",
+      "description": "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.",
+      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "schema:DefinedTerm"
       ],
-      "class_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/PersonCollection",
-      "tree_root": true,
+      "is_a": "Intangible",
+      "slots": [
+        "id",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url",
+        "inDefinedTermSet",
+        "termCode"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://schema.org/DefinedTerm",
+      "@type": "ClassDefinition"
+    },
+    {
+      "name": "DefinedTermSet",
+      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/DefinedTermSet",
+      "description": "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.",
+      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
+      "mappings": [
+        "schema:DefinedTermSet"
+      ],
+      "is_a": "CreativeWork",
+      "slots": [
+        "id",
+        "alternateName",
+        "description",
+        "name",
+        "sameAs",
+        "url",
+        "hasDefinedTerm"
+      ],
+      "slot_usage": {},
+      "class_uri": "http://schema.org/DefinedTermSet",
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "definedtermset_profile.yaml",
-  "source_file_date": "2023-12-12T09:46:52",
-  "source_file_size": 1474,
-  "generation_date": "2023-12-12T09:47:19",
+  "source_file_date": "2023-12-12T13:38:54",
+  "source_file_size": 3099,
+  "generation_date": "2023-12-12T13:39:00",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/definedtermset_profile.context.jsonld",

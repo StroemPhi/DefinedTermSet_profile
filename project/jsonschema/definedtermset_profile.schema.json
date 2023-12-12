@@ -1,9 +1,12 @@
 {
     "$defs": {
-        "NamedThing": {
+        "CreativeWork": {
             "additionalProperties": false,
-            "description": "A generic grouping for any identifiable entity",
+            "description": "",
             "properties": {
+                "alternateName": {
+                    "type": "string"
+                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": "string"
@@ -14,19 +17,30 @@
                 },
                 "name": {
                     "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "sameAs": {
+                    "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "URL of the item.",
                     "type": "string"
                 }
             },
             "required": [
                 "id"
             ],
-            "title": "NamedThing",
+            "title": "CreativeWork",
             "type": "object"
         },
-        "Person": {
+        "DefinedTerm": {
             "additionalProperties": false,
-            "description": "Represents a Person",
+            "description": "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.",
             "properties": {
+                "alternateName": {
+                    "type": "string"
+                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": "string"
@@ -35,42 +49,78 @@
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
+                "inDefinedTermSet": {
+                    "description": "A DefinedTermSet that contains this term.",
+                    "type": "string"
+                },
                 "name": {
                     "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "sameAs": {
+                    "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "type": "string"
+                },
+                "termCode": {
+                    "description": "A code that identifies this DefinedTerm within a DefinedTermSet.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "URL of the item.",
                     "type": "string"
                 }
             },
             "required": [
                 "id"
             ],
-            "title": "Person",
+            "title": "DefinedTerm",
             "type": "object"
         },
-        "PersonCollection": {
+        "DefinedTermSet": {
             "additionalProperties": false,
-            "description": "A holder for Person objects",
+            "description": "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.",
             "properties": {
-                "entries": {
-                    "additionalProperties": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/$defs/Person__identifier_optional"
-                            },
-                            {
-                                "type": "null"
-                            }
-                        ]
-                    },
-                    "type": "object"
+                "alternateName": {
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "hasDefinedTerm": {
+                    "description": "A Defined Term contained in this term set.",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "sameAs": {
+                    "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "URL of the item.",
+                    "type": "string"
                 }
             },
-            "title": "PersonCollection",
+            "required": [
+                "id"
+            ],
+            "title": "DefinedTermSet",
             "type": "object"
         },
-        "Person__identifier_optional": {
+        "Intangible": {
             "additionalProperties": false,
-            "description": "Represents a Person",
+            "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
             "properties": {
+                "alternateName": {
+                    "type": "string"
+                },
                 "description": {
                     "description": "A human-readable description for a thing",
                     "type": "string"
@@ -82,33 +132,61 @@
                 "name": {
                     "description": "A human-readable name for a thing",
                     "type": "string"
+                },
+                "sameAs": {
+                    "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "URL of the item.",
+                    "type": "string"
                 }
             },
-            "required": [],
-            "title": "Person",
+            "required": [
+                "id"
+            ],
+            "title": "Intangible",
+            "type": "object"
+        },
+        "Thing": {
+            "additionalProperties": false,
+            "description": "The most generic type of item.",
+            "properties": {
+                "alternateName": {
+                    "type": "string"
+                },
+                "description": {
+                    "description": "A human-readable description for a thing",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "A unique identifier for a thing",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "A human-readable name for a thing",
+                    "type": "string"
+                },
+                "sameAs": {
+                    "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "URL of the item.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "title": "Thing",
             "type": "object"
         }
     },
     "$id": "https://w3id.org/stroemphi/DefinedTermSet_profile",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
-    "description": "A holder for Person objects",
     "metamodel_version": "1.7.0",
-    "properties": {
-        "entries": {
-            "additionalProperties": {
-                "anyOf": [
-                    {
-                        "$ref": "#/$defs/Person__identifier_optional"
-                    },
-                    {
-                        "type": "null"
-                    }
-                ]
-            },
-            "type": "object"
-        }
-    },
     "title": "DefinedTermSet_profile",
     "type": "object",
     "version": null
