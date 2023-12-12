@@ -1,182 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Boolean/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Boolean/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/CreativeWork/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/CreativeWork/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Curie/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Curie/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Date/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Date/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/DateOrDatetime/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/DateOrDatetime/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Datetime/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Datetime/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Decimal/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Decimal/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/DefinedTerm/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/DefinedTerm/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/DefinedTermSet/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/DefinedTermSet/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/DefinedTermSet_profile/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/DefinedTerm_profile/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Double/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Double/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Float/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Float/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Intangible/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Intangible/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Integer/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Integer/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Jsonpath/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Jsonpath/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Jsonpointer/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Jsonpointer/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Ncname/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Ncname/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Nodeidentifier/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Nodeidentifier/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Objectidentifier/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Objectidentifier/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Sparqlpath/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Sparqlpath/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/String/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/String/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Thing/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Thing/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Time/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Time/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Uri/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Uri/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/Uriorcurie/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/Uriorcurie/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/about/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/about/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/alternateName/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/alternateName/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/description/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/description/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/hasDefinedTerm/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/hasDefinedTerm/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/id/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/id/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/inDefinedTermSet/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/inDefinedTermSet/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/name/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/name/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/sameAs/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/sameAs/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/termCode/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/termCode/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://stroemphi.github.io/DefinedTermSet_profile/url/</loc>
+         <loc>https://stroemphi.github.io/DefinedTerm_profile/url/</loc>
          <lastmod>2023-12-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
