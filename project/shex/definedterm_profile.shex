@@ -1,4 +1,4 @@
-BASE <https://w3id.org/stroemphi/DefinedTermSet_profile/>
+BASE <https://w3id.org/stroemphi/DefinedTerm_profile/>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX linkml: <https://w3id.org/linkml/>
@@ -56,8 +56,8 @@ linkml:Sparqlpath xsd:string
 <DefinedTerm> CLOSED {
     (  $<DefinedTerm_tes> (  &<Intangible_tes> ;
           rdf:type [ schema1:Intangible ] ? ;
-          schema1:inDefinedTermSet @<DefinedTermSet> ;
-          schema1:termCode @linkml:String ?
+          schema1:inDefinedTermSet @linkml:Uriorcurie ;
+          schema1:termCode @linkml:String
        ) ;
        rdf:type [ schema1:DefinedTerm ]
     )
@@ -84,7 +84,7 @@ linkml:Sparqlpath xsd:string
 
 <Thing>  (
     CLOSED {
-       (  $<Thing_tes> (  schema1:alternateName @linkml:String ? ;
+       (  $<Thing_tes> (  schema1:alternateName @linkml:String * ;
              schema1:description @linkml:String ? ;
              schema1:name @linkml:String ? ;
              schema1:sameAs @linkml:String ? ;

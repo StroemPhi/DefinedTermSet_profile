@@ -2,7 +2,7 @@
 message CreativeWork
  {
   uriorcurie id = 0
-  string alternateName = 0
+ repeated  string alternateName = 0
   string description = 0
   string name = 0
   string sameAs = 0
@@ -12,19 +12,19 @@ message CreativeWork
 message DefinedTerm
  {
   uriorcurie id = 0
-  string alternateName = 0
+ repeated  string alternateName = 0
   string description = 0
   string name = 0
   string sameAs = 0
   uriorcurie url = 0
-  definedTermSet inDefinedTermSet = 0
+  uriorcurie inDefinedTermSet = 0
   string termCode = 0
  }
 // A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.
 message DefinedTermSet
  {
   uriorcurie id = 0
-  string alternateName = 0
+ repeated  string alternateName = 0
   string description = 0
   string name = 0
   string sameAs = 0
@@ -35,7 +35,7 @@ message DefinedTermSet
 message Intangible
  {
   uriorcurie id = 0
-  string alternateName = 0
+ repeated  string alternateName = 0
   string description = 0
   string name = 0
   string sameAs = 0
@@ -45,7 +45,7 @@ message Intangible
 message Thing
  {
   uriorcurie id = 0
-  string alternateName = 0
+ repeated  string alternateName = 0
   string description = 0
   string name = 0
   string sameAs = 0

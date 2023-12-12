@@ -1,5 +1,6 @@
 {
-   "definedtermset_profile": "https://w3id.org/stroemphi/DefinedTermSet_profile/",
+   "dct": "http://purl.org/dc/terms/",
+   "definedterm_profile": "https://w3id.org/stroemphi/DefinedTerm_profile/",
    "example": "https://example.org/",
    "linkml": "https://w3id.org/linkml/",
    "schema": "http://schema.org/",
