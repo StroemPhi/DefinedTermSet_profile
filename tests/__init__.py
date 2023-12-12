@@ -1,1 +1,1 @@
-"""Tests for DefinedTermSet_profile."""
+"""Tests for DefinedTerm_profile."""

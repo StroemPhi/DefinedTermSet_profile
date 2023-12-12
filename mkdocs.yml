@@ -1,5 +1,5 @@
 ---
-site_name: "DefinedTermSet_profile"
+site_name: "DefinedTerm_profile"
 theme:
   name: material
   # palette:
@@ -14,8 +14,8 @@ nav:
   # - Home: home.md
   - Index: index.md
   - About: about.md
-site_url: https://stroemphi.github.io/DefinedTermSet_profile
-repo_url: https://github.com/stroemphi/DefinedTermSet_profile
+site_url: https://stroemphi.github.io/DefinedTerm_profile
+repo_url: https://github.com/stroemphi/DefinedTerm_profile
 
 # Uncomment this block to enable use of Google Analytics.
 # Replace the property value with your own ID.

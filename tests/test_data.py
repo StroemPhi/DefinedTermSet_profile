@@ -4,7 +4,7 @@ import glob
 import unittest
 
 from linkml_runtime.loaders import yaml_loader
-from definedtermset_profile.datamodel.definedtermset_profile import DefinedTerm
+from definedterm_profile.datamodel.definedterm_profile import DefinedTerm
 
 ROOT = os.path.join(os.path.dirname(__file__), '..')
 DATA_DIR = os.path.join(ROOT, "src", "data", "examples")

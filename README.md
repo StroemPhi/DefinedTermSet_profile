@@ -1,20 +1,20 @@
-# DefinedTermSet_profile
+# DefinedTerm_profile
 
-A LinkML schema to define a profile for the DefinedTermSet class from Schema.org.
+A LinkML schema to define a profile for the DefinedTerm class from Schema.org.
 
 ## Website
 
-[https://stroemphi.github.io/DefinedTermSet_profile](https://stroemphi.github.io/DefinedTermSet_profile)
+[https://stroemphi.github.io/DefinedTerm_profile](https://stroemphi.github.io/DefinedTerm_profile)
 
 ## Repository Structure
 
 * [examples/](examples/) - example data
 * [project/](project/) - project files (do not edit these)
 * [src/](src/) - source files (edit these)
-  * [definedtermset_profile](src/definedtermset_profile)
-    * [schema](src/definedtermset_profile/schema) -- LinkML schema
+  * [definedterm_profile](src/definedterm_profile)
+    * [schema](src/definedterm_profile/schema) -- LinkML schema
       (edit this)
-    * [datamodel](src/definedtermset_profile/datamodel) -- generated
+    * [datamodel](src/definedterm_profile/datamodel) -- generated
       Python datamodel
 * [tests/](tests/) - Python tests
 

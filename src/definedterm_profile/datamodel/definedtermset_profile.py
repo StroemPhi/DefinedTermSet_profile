@@ -1,6 +1,6 @@
-# Auto generated from definedtermset_profile.yaml by pythongen.py version: 0.0.1
+# Auto generated from definedterm_profile.yaml by pythongen.py version: 0.0.1
 # Generation date: 2023-12-12T15:00:04
-# Schema: DefinedTermSet_profile
+# Schema: DefinedTerm_profile
 #
 # id: https://w3id.org/stroemphi/DefinedTermSet_profile
 # description: A LinkML schema to define a profile for the DefinedTermSet class from Schema.org.
@@ -31,7 +31,7 @@ version = None
 dataclasses._init_fn = dataclasses_init_fn_with_kwargs
 
 # Namespaces
-DEFINEDTERMSET_PROFILE = CurieNamespace('definedtermset_profile', 'https://w3id.org/stroemphi/DefinedTermSet_profile/')
+DEFINEDTERMSET_PROFILE = CurieNamespace('definedterm_profile', 'https://w3id.org/stroemphi/DefinedTermSet_profile/')
 EXAMPLE = CurieNamespace('example', 'https://example.org/')
 LINKML = CurieNamespace('linkml', 'https://w3id.org/linkml/')
 SCHEMA = CurieNamespace('schema', 'http://schema.org/')

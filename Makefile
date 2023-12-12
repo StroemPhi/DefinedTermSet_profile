@@ -132,7 +132,7 @@ examples/%.ttl: src/data/examples/%.yaml
 
 test-examples: examples/output
 
-examples/output: src/definedtermset_profile/schema/definedtermset_profile.yaml
+examples/output: src/definedterm_profile/schema/definedterm_profile.yaml
 	mkdir -p $@
 	$(RUN) linkml-run-examples \
 		--output-formats json \

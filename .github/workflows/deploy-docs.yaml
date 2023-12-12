@@ -1,5 +1,5 @@
 ---
-name: Auto-deployment of definedtermset_profile Documentation
+name: Auto-deployment of definedterm_profile Documentation
 on:
   push:
     branches: [main]
