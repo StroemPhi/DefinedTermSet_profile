@@ -20,21 +20,16 @@
       "prefix_reference": "https://w3id.org/linkml/"
     },
     {
-      "prefix_prefix": "biolink",
-      "prefix_reference": "https://w3id.org/biolink/"
-    },
-    {
       "prefix_prefix": "schema",
       "prefix_reference": "http://schema.org/"
-    },
-    {
-      "prefix_prefix": "PATO",
-      "prefix_reference": "http://purl.obolibrary.org/obo/PATO_"
     },
     {
       "prefix_prefix": "example",
       "prefix_reference": "https://example.org/"
     }
+  ],
+  "default_curi_maps": [
+    "semweb_context"
   ],
   "default_prefix": "definedtermset_profile",
   "default_range": "string",
@@ -348,32 +343,6 @@
       "@type": "TypeDefinition"
     }
   ],
-  "enums": [
-    {
-      "name": "PersonStatus",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/PersonStatus",
-      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "permissible_values": [
-        {
-          "text": "ALIVE",
-          "description": "the person is living",
-          "meaning": "PATO:0001421"
-        },
-        {
-          "text": "DEAD",
-          "description": "the person is deceased",
-          "meaning": "PATO:0001422"
-        },
-        {
-          "text": "UNKNOWN",
-          "description": "the vital status is not known",
-          "todos": [
-            "map this to an ontology"
-          ]
-        }
-      ]
-    }
-  ],
   "slots": [
     {
       "name": "id",
@@ -426,64 +395,6 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "primary_email",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/primary_email",
-      "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "slot_uri": "http://schema.org/email",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "birth_date",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/birth_date",
-      "description": "Date on which a person is born",
-      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "mappings": [
-        "http://schema.org/birthDate"
-      ],
-      "slot_uri": "http://schema.org/birthDate",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "date",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "age_in_years",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/age_in_years",
-      "description": "Number of years since birth",
-      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "slot_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/age_in_years",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "vital_status",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/vital_status",
-      "description": "living or dead status",
-      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "slot_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/vital_status",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "range": "PersonStatus",
-      "@type": "SlotDefinition"
-    },
-    {
       "name": "personCollection__entries",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
       "slot_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/entries",
@@ -495,28 +406,6 @@
       ],
       "range": "Person",
       "inlined": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Person_primary_email",
-      "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/primary_email",
-      "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "is_a": "primary_email",
-      "domain": "Person",
-      "slot_uri": "http://schema.org/email",
-      "alias": "primary_email",
-      "owner": "Person",
-      "domain_of": [
-        "Person"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "primary_email",
-      "range": "string",
-      "pattern": "^\\S+@[\\S+\\.]+\\S+",
       "@type": "SlotDefinition"
     }
   ],
@@ -547,11 +436,7 @@
       "slots": [
         "id",
         "name",
-        "description",
-        "Person_primary_email",
-        "birth_date",
-        "age_in_years",
-        "vital_status"
+        "description"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/Person",
@@ -582,9 +467,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "definedtermset_profile.yaml",
-  "source_file_date": "2023-12-11T22:42:36",
-  "source_file_size": 2400,
-  "generation_date": "2023-12-11T23:55:23",
+  "source_file_date": "2023-12-12T09:46:52",
+  "source_file_size": 1474,
+  "generation_date": "2023-12-12T09:47:19",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/definedtermset_profile.context.jsonld",
