@@ -219,8 +219,6 @@
 
       DefinedTerm : inDefinedTermSet
 
-          DefinedTerm --|&gt; DefinedTermSet : inDefinedTermSet
-
       DefinedTerm : name
 
       DefinedTerm : sameAs
@@ -254,7 +252,7 @@
 <tbody>
 <tr>
 <td><a href="../inDefinedTermSet/">inDefinedTermSet</a></td>
-<td>1..1 <br/> <a href="../DefinedTermSet/">DefinedTermSet</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A DefinedTermSet that contains this term</td>
 <td>direct</td>
 </tr>
@@ -357,9 +355,27 @@ description: A word, name, acronym, phrase, etc. with a formal definition. Often
   provide the definition of the term.
 from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
 is_a: Intangible
-slots:
-- inDefinedTermSet
-- termCode
+attributes:
+  inDefinedTermSet:
+    name: inDefinedTermSet
+    description: A DefinedTermSet that contains this term.
+    from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
+    exact_mappings:
+    - dct:conformsTo
+    rank: 1000
+    slot_uri: schema:inDefinedTermSet
+    range: uriorcurie
+    required: true
+  termCode:
+    name: termCode
+    description: A code that identifies this DefinedTerm within a DefinedTermSet.
+    comments:
+    - In the REST response of an OLS based look-up service (e.g. https://service.tib.eu/ts4tib/api/)
+      this would correspond to the `short_form` key.
+    from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
+    rank: 1000
+    slot_uri: schema:termCode
+    required: true
 class_uri: schema:DefinedTerm
 tree_root: true
 
@@ -388,7 +404,7 @@ attributes:
     owner: DefinedTerm
     domain_of:
     - DefinedTerm
-    range: DefinedTermSet
+    range: uriorcurie
     required: true
   termCode:
     name: termCode
