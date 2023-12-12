@@ -1,5 +1,5 @@
 # Auto generated from definedtermset_profile.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-11T23:08:03
+# Generation date: 2023-12-11T23:55:26
 # Schema: DefinedTermSet_profile
 #
 # id: https://w3id.org/stroemphi/DefinedTermSet_profile

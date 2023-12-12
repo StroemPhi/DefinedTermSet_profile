@@ -3,5 +3,4 @@ name: definedtermset_profile
 author: Philip Stroemert <philip.stroemert@tib.eu>
 description: A LinkML schema to define a profile for the DefinedTermSet class from Schema.org.
 source_schema_path: src/definedtermset_profile/schema/definedtermset_profile.yaml
-google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
-google_sheet_tabs: personinfo enums
+

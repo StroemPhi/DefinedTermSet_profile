@@ -131,3 +131,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# PyCharm
+.idea/workspace.xml
+.idea/DefinedTermSet_profile.iml
+.idea/workspace.xml
