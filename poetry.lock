@@ -910,13 +910,13 @@ referencing = ">=0.31.0"
 
 [[package]]
 name = "linkml"
-version = "1.6.4"
+version = "1.6.5"
 description = "Linked Open Data Modeling Language"
 optional = false
 python-versions = ">=3.8.1,<4.0.0"
 files = [
-    {file = "linkml-1.6.4-py3-none-any.whl", hash = "sha256:bb194d9edfcabda4f8b10bbf83509b43e69f8beed5fbe96756de605b4b3ad5eb"},
-    {file = "linkml-1.6.4.tar.gz", hash = "sha256:cfb1c0d78f6697ca28250337cbddafd1d655c1492b80ebd3a9b683d00c936d18"},
+    {file = "linkml-1.6.5-py3-none-any.whl", hash = "sha256:b13535f99e9a6047e9af3294e9a44760de89f287ec3d056de8fdff75a54bbfd0"},
+    {file = "linkml-1.6.5.tar.gz", hash = "sha256:1df5b38f89058486ff92ec107deb403cf69a11f03b7d1c2a79840050fd789064"},
 ]
 
 [package.dependencies]
@@ -2668,4 +2668,4 @@ docs = []
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "45ab0641686b3572e070cc39ae4a66ac504af0e079ac7e36c12fdaee200a1f11"
+content-hash = "a477181e9544506d2d1711776f142f11787643da7bbdc6b8370e363bc980f38f"
