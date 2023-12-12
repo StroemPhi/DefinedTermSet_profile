@@ -3,36 +3,38 @@
   "description": "This is an example instance of a defined term used in a schema.org based JSON-ld",
   "name": "Abnormality of the face",
   "inDefinedTermSet": "http://purl.obolibrary.org/obo/hp/releases/2023-10-09/hp-base.owl",
+  "termCode": "HP_0000271",
   "@type": "DefinedTerm",
   "@context": {
-    "definedtermset_profile": "https://w3id.org/stroemphi/DefinedTermSet_profile/",
+    "dct": "http://purl.org/dc/terms/",
+    "definedterm_profile": "https://w3id.org/stroemphi/DefinedTerm_profile/",
     "example": "https://example.org/",
     "linkml": "https://w3id.org/linkml/",
     "schema": "http://schema.org/",
-    "@vocab": "https://w3id.org/stroemphi/DefinedTermSet_profile/",
+    "@vocab": "https://w3id.org/stroemphi/DefinedTerm_profile/",
     "alternateName": {
       "@id": "schema:alternateName"
     },
-    "description": {
-      "@id": "schema:description"
+    "inDefinedTermSet": {
+      "@type": "@id",
+      "@id": "schema:inDefinedTermSet"
+    },
+    "termCode": {
+      "@id": "schema:termCode"
     },
     "hasDefinedTerm": {
       "@type": "@id",
       "@id": "schema:hasDefinedTerm"
     },
-    "id": "@id",
-    "inDefinedTermSet": {
-      "@type": "@id",
-      "@id": "schema:inDefinedTermSet"
+    "description": {
+      "@id": "schema:description"
     },
+    "id": "@id",
     "name": {
       "@id": "schema:name"
     },
     "sameAs": {
       "@id": "schema:sameAs"
-    },
-    "termCode": {
-      "@id": "schema:termCode"
     },
     "url": {
       "@type": "@id",
