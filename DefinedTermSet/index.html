@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://stroemphi.github.io/DefinedTermSet_profile/NamedThing/" rel="canonical"/>
+<link href="https://stroemphi.github.io/DefinedTermSet_profile/DefinedTermSet/" rel="canonical"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-8.5.10" name="generator"/>
-<title>Class: NamedThing - DefinedTermSet_profile</title>
+<title>Class: DefinedTermSet - DefinedTermSet_profile</title>
 <link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#class-namedthing">
+<a class="md-skip" href="#class-definedtermset">
           Skip to content
         </a>
 </div>
@@ -45,7 +45,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Class: NamedThing
+              Class: DefinedTermSet
             
           </span>
 </div>
@@ -152,6 +152,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+    Usages
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
@@ -196,32 +201,41 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/stroemphi/DefinedTermSet_profile/edit/master/docs/NamedThing.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/stroemphi/DefinedTermSet_profile/edit/master/docs/DefinedTermSet.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="class-namedthing">Class: NamedThing</h1>
-<p><em>A generic grouping for any identifiable entity</em></p>
-<p>URI: <a href="http://schema.org/Thing">schema:Thing</a></p>
+<h1 id="class-definedtermset">Class: DefinedTermSet</h1>
+<p><em>A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.</em></p>
+<p>URI: <a href="http://schema.org/DefinedTermSet">schema:DefinedTermSet</a></p>
 <div class="mermaid"> classDiagram
-    class NamedThing
-      NamedThing &lt;|-- DefinedTerm
-      NamedThing &lt;|-- DefinedTermSet
+    class DefinedTermSet
+      CreativeWork &lt;|-- DefinedTermSet
 
-      NamedThing : alternateName
+      DefinedTermSet : alternateName
 
-      NamedThing : description
+      DefinedTermSet : description
 
-      NamedThing : id
+      DefinedTermSet : hasDefinedTerm
 
-      NamedThing : name
+          DefinedTermSet --|&gt; DefinedTerm : hasDefinedTerm
+
+      DefinedTermSet : id
+
+      DefinedTermSet : name
+
+      DefinedTermSet : sameAs
+
+      DefinedTermSet : url
 
 
 </div>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><strong>NamedThing</strong><ul>
-<li><a href="../DefinedTerm/">DefinedTerm</a></li>
-<li><a href="../DefinedTermSet/">DefinedTermSet</a></li>
+<li><a href="../Thing/">Thing</a><ul>
+<li><a href="../CreativeWork/">CreativeWork</a><ul>
+<li><strong>DefinedTermSet</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -237,28 +251,65 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
-<td>A unique identifier for a thing</td>
+<td><a href="../hasDefinedTerm/">hasDefinedTerm</a></td>
+<td>0..1 <br/> <a href="../DefinedTerm/">DefinedTerm</a></td>
+<td>A Defined Term contained in this term set</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../name/">name</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
-<td>A human-readable name for a thing</td>
-<td>direct</td>
+<td><a href="../id/">id</a></td>
+<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>A unique identifier for a thing</td>
+<td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../alternateName/">alternateName</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td></td>
-<td>direct</td>
+<td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
 <td><a href="../description/">description</a></td>
 <td>0..1 <br/> <a href="../String/">String</a></td>
 <td>A human-readable description for a thing</td>
-<td>direct</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../name/">name</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>A human-readable name for a thing</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../sameAs/">sameAs</a></td>
+<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>URL of a reference Web page that unambiguously indicates the item's identity</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+<tr>
+<td><a href="../url/">url</a></td>
+<td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>URL of the item</td>
+<td><a href="../Thing/">Thing</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../DefinedTerm/">DefinedTerm</a></td>
+<td><a href="../inDefinedTermSet/">inDefinedTermSet</a></td>
+<td>range</td>
+<td><a href="./">DefinedTermSet</a></td>
 </tr>
 </tbody>
 </table>
@@ -278,11 +329,11 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>schema:Thing</td>
+<td>schema:DefinedTermSet</td>
 </tr>
 <tr>
 <td>native</td>
-<td>definedtermset_profile:NamedThing</td>
+<td>definedtermset_profile:DefinedTermSet</td>
 </tr>
 </tbody>
 </table>
@@ -290,24 +341,36 @@
 <!-- TODO: investigate https://stackoverflow.com/questions/37606292/how-to-create-tabbed-code-blocks-in-mkdocs-or-sphinx -->
 <h3 id="direct">Direct</h3>
 <details>
-<pre><code class="language-yaml">name: NamedThing
-description: A generic grouping for any identifiable entity
+<pre><code class="language-yaml">name: DefinedTermSet
+description: A set of defined terms for example a set of categories or a classification
+  scheme, a glossary, dictionary or enumeration.
 from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
+is_a: CreativeWork
 slots:
-- id
-- name
-- alternateName
-- description
-class_uri: schema:Thing
+- hasDefinedTerm
+class_uri: schema:DefinedTermSet
 
 </code></pre>
 </details>
 <h3 id="induced">Induced</h3>
 <details>
-<pre><code class="language-yaml">name: NamedThing
-description: A generic grouping for any identifiable entity
+<pre><code class="language-yaml">name: DefinedTermSet
+description: A set of defined terms for example a set of categories or a classification
+  scheme, a glossary, dictionary or enumeration.
 from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
+is_a: CreativeWork
 attributes:
+  hasDefinedTerm:
+    name: hasDefinedTerm
+    description: A Defined Term contained in this term set.
+    from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
+    rank: 1000
+    slot_uri: schema:hasDefinedTerm
+    alias: hasDefinedTerm
+    owner: DefinedTermSet
+    domain_of:
+    - DefinedTermSet
+    range: DefinedTerm
   id:
     name: id
     description: A unique identifier for a thing
@@ -316,30 +379,20 @@ attributes:
     slot_uri: schema:identifier
     identifier: true
     alias: id
-    owner: NamedThing
+    owner: DefinedTermSet
     domain_of:
-    - NamedThing
+    - Thing
     range: uriorcurie
-  name:
-    name: name
-    description: A human-readable name for a thing
-    from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
-    rank: 1000
-    slot_uri: schema:name
-    alias: name
-    owner: NamedThing
-    domain_of:
-    - NamedThing
-    range: string
+    required: true
   alternateName:
     name: alternateName
     from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
     rank: 1000
     slot_uri: schema:alternateName
     alias: alternateName
-    owner: NamedThing
+    owner: DefinedTermSet
     domain_of:
-    - NamedThing
+    - Thing
     range: string
   description:
     name: description
@@ -348,11 +401,46 @@ attributes:
     rank: 1000
     slot_uri: schema:description
     alias: description
-    owner: NamedThing
+    owner: DefinedTermSet
     domain_of:
-    - NamedThing
+    - Thing
     range: string
-class_uri: schema:Thing
+  name:
+    name: name
+    description: A human-readable name for a thing
+    from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
+    rank: 1000
+    slot_uri: schema:name
+    alias: name
+    owner: DefinedTermSet
+    domain_of:
+    - Thing
+    range: string
+  sameAs:
+    name: sameAs
+    description: URL of a reference Web page that unambiguously indicates the item's
+      identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
+      website.
+    from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
+    rank: 1000
+    slot_uri: schema:sameAs
+    alias: sameAs
+    owner: DefinedTermSet
+    domain_of:
+    - Thing
+    range: string
+  url:
+    name: url
+    description: URL of the item.
+    from_schema: https://w3id.org/stroemphi/DefinedTermSet_profile
+    rank: 1000
+    slot_uri: schema:url
+    alias: url
+    owner: DefinedTermSet
+    domain_of:
+    - Thing
+    range: uriorcurie
+class_uri: schema:DefinedTermSet
 
 </code></pre>
 </details>

@@ -393,16 +393,24 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
+<td><a href="Thing/">Thing</a></td>
+<td>The most generic type of item.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Person/">Person</a></td>
-<td>Represents a Person</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="CreativeWork/">CreativeWork</a></td>
+<td>None</td>
 </tr>
 <tr>
-<td><a href="PersonCollection/">PersonCollection</a></td>
-<td>A holder for Person objects</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DefinedTermSet/">DefinedTermSet</a></td>
+<td>A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Intangible/">Intangible</a></td>
+<td>A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="DefinedTerm/">DefinedTerm</a></td>
+<td>A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.</td>
 </tr>
 </tbody>
 </table>
@@ -416,20 +424,40 @@
 </thead>
 <tbody>
 <tr>
+<td><a href="alternateName/">alternateName</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="description/">description</a></td>
 <td>A human-readable description for a thing</td>
 </tr>
 <tr>
-<td><a href="entries/">entries</a></td>
-<td></td>
+<td><a href="hasDefinedTerm/">hasDefinedTerm</a></td>
+<td>A Defined Term contained in this term set</td>
 </tr>
 <tr>
 <td><a href="id/">id</a></td>
 <td>A unique identifier for a thing</td>
 </tr>
 <tr>
+<td><a href="inDefinedTermSet/">inDefinedTermSet</a></td>
+<td>A DefinedTermSet that contains this term</td>
+</tr>
+<tr>
 <td><a href="name/">name</a></td>
 <td>A human-readable name for a thing</td>
+</tr>
+<tr>
+<td><a href="sameAs/">sameAs</a></td>
+<td>URL of a reference Web page that unambiguously indicates the item's identity</td>
+</tr>
+<tr>
+<td><a href="termCode/">termCode</a></td>
+<td>A code that identifies this DefinedTerm within a DefinedTermSet</td>
+</tr>
+<tr>
+<td><a href="url/">url</a></td>
+<td>URL of the item</td>
 </tr>
 </tbody>
 </table>
