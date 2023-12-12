@@ -5,17 +5,10 @@
 
 schema1:CreativeWork a sh:NodeShape ;
     sh:closed true ;
+    sh:description "The most generic kind of creative work, including books, movies, photographs, software programs, etc." ;
     sh:ignoredProperties ( rdf:type ) ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
             sh:maxCount 1 ;
             sh:order 1 ;
             sh:path schema1:alternateName ],
@@ -25,10 +18,19 @@ schema1:CreativeWork a sh:NodeShape ;
             sh:order 4 ;
             sh:path schema1:sameAs ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
+            sh:description "The name of the item." ;
             sh:maxCount 1 ;
             sh:order 3 ;
             sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:url ],
         [ sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
@@ -40,41 +42,13 @@ schema1:Intangible a sh:NodeShape ;
     sh:closed true ;
     sh:description "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "A unique identifier for a thing" ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 0 ;
-            sh:path schema1:identifier ],
-        [ sh:datatype xsd:string ;
+    sh:property [ sh:datatype xsd:string ;
             sh:description "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
             sh:maxCount 1 ;
             sh:order 4 ;
             sh:path schema1:sameAs ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:alternateName ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 3 ;
-            sh:path schema1:name ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:url ] ;
-    sh:targetClass schema1:Intangible .
-
-schema1:Thing a sh:NodeShape ;
-    sh:closed true ;
-    sh:description "The most generic type of item." ;
-    sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
             sh:maxCount 1 ;
             sh:order 1 ;
             sh:path schema1:alternateName ],
@@ -82,22 +56,52 @@ schema1:Thing a sh:NodeShape ;
             sh:maxCount 1 ;
             sh:order 5 ;
             sh:path schema1:url ],
+        [ sh:description "A unique identifier for a thing" ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:order 0 ;
+            sh:path schema1:identifier ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 3 ;
+            sh:path schema1:name ] ;
+    sh:targetClass schema1:Intangible .
+
+schema1:Thing a sh:NodeShape ;
+    sh:closed true ;
+    sh:description "The most generic type of item." ;
+    sh:ignoredProperties ( rdf:type ) ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 2 ;
+            sh:path schema1:description ],
         [ sh:datatype xsd:string ;
             sh:description "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
             sh:maxCount 1 ;
             sh:order 4 ;
             sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
+        [ sh:description "URL of the item." ;
             sh:maxCount 1 ;
-            sh:order 2 ;
-            sh:path schema1:description ],
+            sh:order 5 ;
+            sh:path schema1:url ],
         [ sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
             sh:order 0 ;
             sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
+            sh:description "An alias for the item." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:alternateName ],
+        [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
             sh:maxCount 1 ;
             sh:order 3 ;
             sh:path schema1:name ] ;
@@ -112,62 +116,55 @@ schema1:DefinedTerm a sh:NodeShape ;
             sh:minCount 1 ;
             sh:order 2 ;
             sh:path schema1:identifier ],
-        [ sh:description "URL of the item." ;
-            sh:maxCount 1 ;
-            sh:order 7 ;
-            sh:path schema1:url ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:description ],
-        [ sh:datatype xsd:string ;
-            sh:description "A code that identifies this DefinedTerm within a DefinedTermSet." ;
-            sh:maxCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:termCode ],
         [ sh:datatype xsd:string ;
             sh:description "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
             sh:maxCount 1 ;
             sh:order 6 ;
             sh:path schema1:sameAs ],
         [ sh:datatype xsd:string ;
+            sh:description "A code that identifies this DefinedTerm within a DefinedTermSet." ;
+            sh:maxCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:termCode ],
+        [ sh:description "URL of the item." ;
+            sh:maxCount 1 ;
+            sh:order 7 ;
+            sh:path schema1:url ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
             sh:maxCount 1 ;
             sh:order 3 ;
             sh:path schema1:alternateName ],
         [ sh:class schema1:DefinedTermSet ;
             sh:description "A DefinedTermSet that contains this term." ;
             sh:maxCount 1 ;
+            sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path schema1:inDefinedTermSet ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
+            sh:description "The name of the item." ;
             sh:maxCount 1 ;
             sh:order 5 ;
-            sh:path schema1:name ] ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "A description of the item." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:description ] ;
     sh:targetClass schema1:DefinedTerm .
 
 schema1:DefinedTermSet a sh:NodeShape ;
     sh:closed true ;
     sh:description "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration." ;
     sh:ignoredProperties ( rdf:type ) ;
-    sh:property [ sh:description "URL of the item." ;
+    sh:property [ sh:description "A unique identifier for a thing" ;
             sh:maxCount 1 ;
-            sh:order 6 ;
-            sh:path schema1:url ],
+            sh:minCount 1 ;
+            sh:order 1 ;
+            sh:path schema1:identifier ],
         [ sh:datatype xsd:string ;
-            sh:description "A human-readable name for a thing" ;
-            sh:maxCount 1 ;
-            sh:order 4 ;
-            sh:path schema1:name ],
-        [ sh:datatype xsd:string ;
-            sh:description "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
-            sh:maxCount 1 ;
-            sh:order 5 ;
-            sh:path schema1:sameAs ],
-        [ sh:datatype xsd:string ;
-            sh:description "A human-readable description for a thing" ;
+            sh:description "A description of the item." ;
             sh:maxCount 1 ;
             sh:order 3 ;
             sh:path schema1:description ],
@@ -177,12 +174,22 @@ schema1:DefinedTermSet a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:order 0 ;
             sh:path schema1:hasDefinedTerm ],
-        [ sh:description "A unique identifier for a thing" ;
+        [ sh:description "URL of the item." ;
             sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:order 1 ;
-            sh:path schema1:identifier ],
+            sh:order 6 ;
+            sh:path schema1:url ],
         [ sh:datatype xsd:string ;
+            sh:description "The name of the item." ;
+            sh:maxCount 1 ;
+            sh:order 4 ;
+            sh:path schema1:name ],
+        [ sh:datatype xsd:string ;
+            sh:description "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
+            sh:maxCount 1 ;
+            sh:order 5 ;
+            sh:path schema1:sameAs ],
+        [ sh:datatype xsd:string ;
+            sh:description "An alias for the item." ;
             sh:maxCount 1 ;
             sh:order 2 ;
             sh:path schema1:alternateName ] ;

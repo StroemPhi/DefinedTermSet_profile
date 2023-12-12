@@ -16,7 +16,7 @@ type DefinedTerm
     name: String
     sameAs: String
     url: Uriorcurie
-    inDefinedTermSet: DefinedTermSet
+    inDefinedTermSet: DefinedTermSet!
     termCode: String
   }
 

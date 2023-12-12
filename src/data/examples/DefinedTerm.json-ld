@@ -1,0 +1,57 @@
+{
+  "id": "http://purl.obolibrary.org/obo/HP_0000271",
+  "description": "This is an example instance of a defined term used in a schema.org based JSON-ld",
+  "name": "Abnormality of the face",
+  "inDefinedTermSet": "http://purl.obolibrary.org/obo/hp/releases/2023-10-09/hp-base.owl",
+  "@type": "DefinedTerm",
+  "@context": {
+    "definedtermset_profile": "https://w3id.org/stroemphi/DefinedTermSet_profile/",
+    "example": "https://example.org/",
+    "linkml": "https://w3id.org/linkml/",
+    "schema": "http://schema.org/",
+    "@vocab": "https://w3id.org/stroemphi/DefinedTermSet_profile/",
+    "alternateName": {
+      "@id": "schema:alternateName"
+    },
+    "description": {
+      "@id": "schema:description"
+    },
+    "hasDefinedTerm": {
+      "@type": "@id",
+      "@id": "schema:hasDefinedTerm"
+    },
+    "id": "@id",
+    "inDefinedTermSet": {
+      "@type": "@id",
+      "@id": "schema:inDefinedTermSet"
+    },
+    "name": {
+      "@id": "schema:name"
+    },
+    "sameAs": {
+      "@id": "schema:sameAs"
+    },
+    "termCode": {
+      "@id": "schema:termCode"
+    },
+    "url": {
+      "@type": "@id",
+      "@id": "schema:url"
+    },
+    "CreativeWork": {
+      "@id": "schema:CreativeWork"
+    },
+    "DefinedTerm": {
+      "@id": "schema:DefinedTerm"
+    },
+    "DefinedTermSet": {
+      "@id": "schema:DefinedTermSet"
+    },
+    "Intangible": {
+      "@id": "schema:Intangible"
+    },
+    "Thing": {
+      "@id": "schema:Thing"
+    }
+  }
+}

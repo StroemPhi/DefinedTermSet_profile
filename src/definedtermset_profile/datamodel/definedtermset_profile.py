@@ -1,5 +1,5 @@
 # Auto generated from definedtermset_profile.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-12T13:39:05
+# Generation date: 2023-12-12T15:00:04
 # Schema: DefinedTermSet_profile
 #
 # id: https://w3id.org/stroemphi/DefinedTermSet_profile
@@ -130,6 +130,9 @@ class Intangible(Thing):
 
 @dataclass
 class CreativeWork(Thing):
+    """
+    The most generic kind of creative work, including books, movies, photographs, software programs, etc.
+    """
     _inherited_slots: ClassVar[List[str]] = []
 
     class_class_uri: ClassVar[URIRef] = SCHEMA["CreativeWork"]
@@ -164,7 +167,7 @@ class DefinedTerm(Intangible):
     class_model_uri: ClassVar[URIRef] = DEFINEDTERMSET_PROFILE.DefinedTerm
 
     id: Union[str, DefinedTermId] = None
-    inDefinedTermSet: Optional[Union[str, DefinedTermSetId]] = None
+    inDefinedTermSet: Union[str, DefinedTermSetId] = None
     termCode: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
@@ -173,7 +176,9 @@ class DefinedTerm(Intangible):
         if not isinstance(self.id, DefinedTermId):
             self.id = DefinedTermId(self.id)
 
-        if self.inDefinedTermSet is not None and not isinstance(self.inDefinedTermSet, DefinedTermSetId):
+        if self._is_empty(self.inDefinedTermSet):
+            self.MissingRequiredField("inDefinedTermSet")
+        if not isinstance(self.inDefinedTermSet, DefinedTermSetId):
             self.inDefinedTermSet = DefinedTermSetId(self.inDefinedTermSet)
 
         if self.termCode is not None and not isinstance(self.termCode, str):
@@ -233,7 +238,7 @@ slots.sameAs = Slot(uri=SCHEMA.sameAs, name="sameAs", curie=SCHEMA.curie('sameAs
                    model_uri=DEFINEDTERMSET_PROFILE.sameAs, domain=None, range=Optional[str])
 
 slots.inDefinedTermSet = Slot(uri=SCHEMA.inDefinedTermSet, name="inDefinedTermSet", curie=SCHEMA.curie('inDefinedTermSet'),
-                   model_uri=DEFINEDTERMSET_PROFILE.inDefinedTermSet, domain=None, range=Optional[Union[str, DefinedTermSetId]])
+                   model_uri=DEFINEDTERMSET_PROFILE.inDefinedTermSet, domain=None, range=Union[str, DefinedTermSetId])
 
 slots.url = Slot(uri=SCHEMA.url, name="url", curie=SCHEMA.curie('url'),
                    model_uri=DEFINEDTERMSET_PROFILE.url, domain=None, range=Optional[Union[str, URIorCURIE]])

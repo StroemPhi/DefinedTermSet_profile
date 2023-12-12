@@ -365,7 +365,7 @@
     {
       "name": "name",
       "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/name",
-      "description": "A human-readable name for a thing",
+      "description": "The name of the item.",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
       "mappings": [
         "http://schema.org/name"
@@ -381,6 +381,7 @@
     {
       "name": "alternateName",
       "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/alternateName",
+      "description": "An alias for the item.",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
       "mappings": [
         "http://schema.org/alternateName"
@@ -396,7 +397,7 @@
     {
       "name": "description",
       "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/description",
-      "description": "A human-readable description for a thing",
+      "description": "A description of the item.",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
       "mappings": [
         "http://schema.org/description"
@@ -439,6 +440,7 @@
         "DefinedTerm"
       ],
       "range": "DefinedTermSet",
+      "required": true,
       "@type": "SlotDefinition"
     },
     {
@@ -535,6 +537,7 @@
     {
       "name": "CreativeWork",
       "definition_uri": "https://w3id.org/stroemphi/DefinedTermSet_profile/CreativeWork",
+      "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
       "from_schema": "https://w3id.org/stroemphi/DefinedTermSet_profile",
       "mappings": [
         "schema:CreativeWork"
@@ -573,6 +576,7 @@
       ],
       "slot_usage": {},
       "class_uri": "http://schema.org/DefinedTerm",
+      "tree_root": true,
       "@type": "ClassDefinition"
     },
     {
@@ -600,9 +604,9 @@
   ],
   "metamodel_version": "1.7.0",
   "source_file": "definedtermset_profile.yaml",
-  "source_file_date": "2023-12-12T13:38:54",
-  "source_file_size": 3099,
-  "generation_date": "2023-12-12T13:39:00",
+  "source_file_date": "2023-12-12T14:56:47",
+  "source_file_size": 3293,
+  "generation_date": "2023-12-12T15:00:00",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/definedtermset_profile.context.jsonld",

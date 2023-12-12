@@ -17,7 +17,7 @@ CREATE TABLE "DefinedTerm" (
 	name TEXT, 
 	"sameAs" TEXT, 
 	url TEXT, 
-	"inDefinedTermSet" TEXT, 
+	"inDefinedTermSet" TEXT NOT NULL, 
 	"termCode" TEXT, 
 	PRIMARY KEY (id), 
 	FOREIGN KEY("inDefinedTermSet") REFERENCES "DefinedTermSet" (id)

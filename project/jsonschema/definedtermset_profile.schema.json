@@ -2,13 +2,14 @@
     "$defs": {
         "CreativeWork": {
             "additionalProperties": false,
-            "description": "",
+            "description": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
             "properties": {
                 "alternateName": {
+                    "description": "An alias for the item.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "A human-readable description for a thing",
+                    "description": "A description of the item.",
                     "type": "string"
                 },
                 "id": {
@@ -16,7 +17,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": "A human-readable name for a thing",
+                    "description": "The name of the item.",
                     "type": "string"
                 },
                 "sameAs": {
@@ -39,10 +40,11 @@
             "description": "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.",
             "properties": {
                 "alternateName": {
+                    "description": "An alias for the item.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "A human-readable description for a thing",
+                    "description": "A description of the item.",
                     "type": "string"
                 },
                 "id": {
@@ -54,7 +56,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": "A human-readable name for a thing",
+                    "description": "The name of the item.",
                     "type": "string"
                 },
                 "sameAs": {
@@ -71,6 +73,7 @@
                 }
             },
             "required": [
+                "inDefinedTermSet",
                 "id"
             ],
             "title": "DefinedTerm",
@@ -81,10 +84,11 @@
             "description": "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration.",
             "properties": {
                 "alternateName": {
+                    "description": "An alias for the item.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "A human-readable description for a thing",
+                    "description": "A description of the item.",
                     "type": "string"
                 },
                 "hasDefinedTerm": {
@@ -96,7 +100,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": "A human-readable name for a thing",
+                    "description": "The name of the item.",
                     "type": "string"
                 },
                 "sameAs": {
@@ -119,10 +123,11 @@
             "description": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
             "properties": {
                 "alternateName": {
+                    "description": "An alias for the item.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "A human-readable description for a thing",
+                    "description": "A description of the item.",
                     "type": "string"
                 },
                 "id": {
@@ -130,7 +135,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": "A human-readable name for a thing",
+                    "description": "The name of the item.",
                     "type": "string"
                 },
                 "sameAs": {
@@ -153,10 +158,11 @@
             "description": "The most generic type of item.",
             "properties": {
                 "alternateName": {
+                    "description": "An alias for the item.",
                     "type": "string"
                 },
                 "description": {
-                    "description": "A human-readable description for a thing",
+                    "description": "A description of the item.",
                     "type": "string"
                 },
                 "id": {
@@ -164,7 +170,7 @@
                     "type": "string"
                 },
                 "name": {
-                    "description": "A human-readable name for a thing",
+                    "description": "The name of the item.",
                     "type": "string"
                 },
                 "sameAs": {
@@ -186,7 +192,46 @@
     "$id": "https://w3id.org/stroemphi/DefinedTermSet_profile",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "additionalProperties": true,
+    "description": "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term.",
     "metamodel_version": "1.7.0",
+    "properties": {
+        "alternateName": {
+            "description": "An alias for the item.",
+            "type": "string"
+        },
+        "description": {
+            "description": "A description of the item.",
+            "type": "string"
+        },
+        "id": {
+            "description": "A unique identifier for a thing",
+            "type": "string"
+        },
+        "inDefinedTermSet": {
+            "description": "A DefinedTermSet that contains this term.",
+            "type": "string"
+        },
+        "name": {
+            "description": "The name of the item.",
+            "type": "string"
+        },
+        "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+            "type": "string"
+        },
+        "termCode": {
+            "description": "A code that identifies this DefinedTerm within a DefinedTermSet.",
+            "type": "string"
+        },
+        "url": {
+            "description": "URL of the item.",
+            "type": "string"
+        }
+    },
+    "required": [
+        "inDefinedTermSet",
+        "id"
+    ],
     "title": "DefinedTermSet_profile",
     "type": "object",
     "version": null

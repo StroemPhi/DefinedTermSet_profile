@@ -56,7 +56,7 @@ linkml:Sparqlpath xsd:string
 <DefinedTerm> CLOSED {
     (  $<DefinedTerm_tes> (  &<Intangible_tes> ;
           rdf:type [ schema1:Intangible ] ? ;
-          schema1:inDefinedTermSet @<DefinedTermSet> ? ;
+          schema1:inDefinedTermSet @<DefinedTermSet> ;
           schema1:termCode @linkml:String ?
        ) ;
        rdf:type [ schema1:DefinedTerm ]
