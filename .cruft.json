@@ -4,11 +4,11 @@
   "checkout": null,
   "context": {
     "cookiecutter": {
-      "project_name": "DefinedTermSet_profile",
-      "__project_slug": "definedtermset_profile",
+      "project_name": "DefinedTerm_profile",
+      "__project_slug": "definedterm_profile",
       "github_org": "stroemphi",
-      "__source_path": "src/definedtermset_profile/schema/definedtermset_profile.yaml",
-      "project_description": "A LinkML schema to define a profile for the DefinedTermSet class from Schema.org.",
+      "__source_path": "src/definedterm_profile/schema/definedterm_profile.yaml",
+      "project_description": "A LinkML schema to define a profile for the DefinedTerm class from Schema.org.",
       "full_name": "Philip Stroemert",
       "email": "philip.stroemert@tib.eu",
       "__author": "Philip Stroemert <philip.stroemert@tib.eu>",

@@ -6,10 +6,10 @@ description: |-
   A LinkML schema to define a profile for the DefinedTerm class from Schema.org.
 license: MIT
 see_also:
-  - https://stroemphi.github.io/DefinedTermSet_profile
+  - https://stroemphi.github.io/DefinedTerm_profile
 
 prefixes:
-  definedtermset_profile: https://w3id.org/stroemphi/DefinedTermSet_profile/
+  definedterm_profile: https://w3id.org/stroemphi/DefinedTerm_profile/
   linkml: https://w3id.org/linkml/
   schema: http://schema.org/
   example: https://example.org/
