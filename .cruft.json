@@ -13,7 +13,7 @@
       "email": "philip.stroemert@tib.eu",
       "__author": "Philip Stroemert <philip.stroemert@tib.eu>",
       "license": "MIT",
-      "main_schema_class": "Person",
+      "main_schema_class": "DefinedTerm",
       "create_python_classes": "Yes",
       "use_schemasheets": "No",
       "google_sheet_id": "1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ",
