@@ -67,7 +67,7 @@ classes:
         range: DefinedTermSet
         required: true
         multivalued: false
-        #inlined: true
+        inlined: true
         exact_mappings:
           - dct:conformsTo
       termCode:
