@@ -121,7 +121,6 @@ slots:
     recommended: true
     close_mappings:
       - dct:title
-
   alternateName:
     slot_uri: schema:alternateName
     description: An alias for the item.
@@ -129,13 +128,11 @@ slots:
     inlined_as_list: true
     exact_mappings:
       - dct:alternative
-
   description:
     slot_uri: schema:description
     description: A description of the item.
     exact_mappings:
       - dct:description
-
   sameAs:
     slot_uri: schema:sameAs
     description:  >-
