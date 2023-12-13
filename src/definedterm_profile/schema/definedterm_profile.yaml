@@ -97,6 +97,12 @@ classes:
         description: A Defined Term contained in this term set.
         multivalued: true
         inlined_as_list: true
+    slot_usage:
+      name:
+        required: true
+        description: >-
+          The name of the DefinedTermSet, e.g. the name of the ontology or controlled vocabulary in which  the used 
+          DefinedTerm is defined.
 
 
 slots:
