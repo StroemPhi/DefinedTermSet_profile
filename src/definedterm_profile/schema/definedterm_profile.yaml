@@ -95,6 +95,8 @@ classes:
         slot_uri: schema:hasDefinedTerm
         range: DefinedTerm
         description: A Defined Term contained in this term set.
+        multivalued: true
+        inlined_as_list: true
 
 
 slots:
