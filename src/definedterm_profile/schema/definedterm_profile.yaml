@@ -77,6 +77,11 @@ classes:
         comments:
           - In the REST response of an OLS based look-up service (e.g. https://service.tib.eu/ts4tib/api/) this would
             correspond to the `short_form` key.
+    slot_usage:
+      sameAs:
+        recommended: true
+        comments:
+          - Use this to link to other DefinedTermSets that define the same DefinedTerm
 
 
   DefinedTermSet:
