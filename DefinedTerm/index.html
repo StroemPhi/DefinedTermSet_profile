@@ -215,9 +215,11 @@
 
       DefinedTerm : description
 
-      DefinedTerm : id
+      DefinedTerm : identifier
 
       DefinedTerm : inDefinedTermSet
+
+          DefinedTerm --|&gt; DefinedTermSet : inDefinedTermSet
 
       DefinedTerm : name
 
@@ -252,7 +254,7 @@
 <tbody>
 <tr>
 <td><a href="../inDefinedTermSet/">inDefinedTermSet</a></td>
-<td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
+<td>1..1 <br/> <a href="../DefinedTermSet/">DefinedTermSet</a></td>
 <td>A DefinedTermSet that contains this term</td>
 <td>direct</td>
 </tr>
@@ -263,7 +265,7 @@
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
+<td><a href="../identifier/">identifier</a></td>
 <td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing</td>
 <td><a href="../Thing/">Thing</a></td>
@@ -288,7 +290,7 @@
 </tr>
 <tr>
 <td><a href="../sameAs/">sameAs</a></td>
-<td>0..1 <br/> <a href="../String/">String</a></td>
+<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
 <td>URL of a reference Web page that unambiguously indicates the item's identity</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
@@ -355,6 +357,14 @@ description: A word, name, acronym, phrase, etc. with a formal definition. Often
   provide the definition of the term.
 from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
 is_a: Intangible
+slot_usage:
+  sameAs:
+    name: sameAs
+    comments:
+    - Use this to link to other DefinedTermSets that define the same DefinedTerm
+    domain_of:
+    - Thing
+    recommended: true
 attributes:
   inDefinedTermSet:
     name: inDefinedTermSet
@@ -364,8 +374,10 @@ attributes:
     - dct:conformsTo
     rank: 1000
     slot_uri: schema:inDefinedTermSet
-    range: uriorcurie
+    multivalued: false
+    range: DefinedTermSet
     required: true
+    inlined: true
   termCode:
     name: termCode
     description: A code that identifies this DefinedTerm within a DefinedTermSet.
@@ -391,6 +403,14 @@ description: A word, name, acronym, phrase, etc. with a formal definition. Often
   provide the definition of the term.
 from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
 is_a: Intangible
+slot_usage:
+  sameAs:
+    name: sameAs
+    comments:
+    - Use this to link to other DefinedTermSets that define the same DefinedTerm
+    domain_of:
+    - Thing
+    recommended: true
 attributes:
   inDefinedTermSet:
     name: inDefinedTermSet
@@ -400,12 +420,14 @@ attributes:
     - dct:conformsTo
     rank: 1000
     slot_uri: schema:inDefinedTermSet
+    multivalued: false
     alias: inDefinedTermSet
     owner: DefinedTerm
     domain_of:
     - DefinedTerm
-    range: uriorcurie
+    range: DefinedTermSet
     required: true
+    inlined: true
   termCode:
     name: termCode
     description: A code that identifies this DefinedTerm within a DefinedTermSet.
@@ -421,8 +443,8 @@ attributes:
     - DefinedTerm
     range: string
     required: true
-  id:
-    name: id
+  identifier:
+    name: identifier
     description: A unique identifier for a thing
     from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
     exact_mappings:
@@ -430,7 +452,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
+    alias: identifier
     owner: DefinedTerm
     domain_of:
     - Thing
@@ -484,6 +506,8 @@ attributes:
     description: URL of a reference Web page that unambiguously indicates the item's
       identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official
       website.
+    comments:
+    - Use this to link to other DefinedTermSets that define the same DefinedTerm
     from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
     rank: 1000
     slot_uri: schema:sameAs
@@ -492,6 +516,7 @@ attributes:
     domain_of:
     - Thing
     range: string
+    recommended: true
   url:
     name: url
     description: URL of the item.

@@ -211,7 +211,7 @@
 
       Thing : description
 
-      Thing : id
+      Thing : identifier
 
       Thing : name
 
@@ -241,7 +241,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../id/">id</a></td>
+<td><a href="../identifier/">identifier</a></td>
 <td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing</td>
 <td>direct</td>
@@ -310,7 +310,7 @@
 description: The most generic type of item.
 from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
 slots:
-- id
+- identifier
 - alternateName
 - description
 - name
@@ -326,8 +326,8 @@ class_uri: schema:Thing
 description: The most generic type of item.
 from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
 attributes:
-  id:
-    name: id
+  identifier:
+    name: identifier
     description: A unique identifier for a thing
     from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
     exact_mappings:
@@ -335,7 +335,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
+    alias: identifier
     owner: Thing
     domain_of:
     - Thing

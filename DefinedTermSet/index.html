@@ -152,6 +152,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#usages">
+    Usages
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#identifier-and-mapping-information">
     Identifier and Mapping Information
   </a>
@@ -214,7 +219,7 @@
 
           DefinedTermSet --|&gt; DefinedTerm : hasDefinedTerm
 
-      DefinedTermSet : id
+      DefinedTermSet : identifier
 
       DefinedTermSet : name
 
@@ -247,12 +252,12 @@
 <tbody>
 <tr>
 <td><a href="../hasDefinedTerm/">hasDefinedTerm</a></td>
-<td>0..1 <br/> <a href="../DefinedTerm/">DefinedTerm</a></td>
+<td>0..* <br/> <a href="../DefinedTerm/">DefinedTerm</a></td>
 <td>A Defined Term contained in this term set</td>
 <td>direct</td>
 </tr>
 <tr>
-<td><a href="../id/">id</a></td>
+<td><a href="../identifier/">identifier</a></td>
 <td>1..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>A unique identifier for a thing</td>
 <td><a href="../Thing/">Thing</a></td>
@@ -271,8 +276,8 @@
 </tr>
 <tr>
 <td><a href="../name/">name</a></td>
-<td>0..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
-<td>The name of the item</td>
+<td>1..1 <em>recommended</em> <br/> <a href="../String/">String</a></td>
+<td>The name of the DefinedTermSet, e</td>
 <td><a href="../Thing/">Thing</a></td>
 </tr>
 <tr>
@@ -286,6 +291,25 @@
 <td>0..1 <br/> <a href="../Uriorcurie/">Uriorcurie</a></td>
 <td>URL of the item</td>
 <td><a href="../Thing/">Thing</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="usages">Usages</h2>
+<table>
+<thead>
+<tr>
+<th>used by</th>
+<th>used in</th>
+<th>type</th>
+<th>used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../DefinedTerm/">DefinedTerm</a></td>
+<td><a href="../inDefinedTermSet/">inDefinedTermSet</a></td>
+<td>range</td>
+<td><a href="./">DefinedTermSet</a></td>
 </tr>
 </tbody>
 </table>
@@ -322,6 +346,14 @@ description: A set of defined terms for example a set of categories or a classif
   scheme, a glossary, dictionary or enumeration.
 from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
 is_a: CreativeWork
+slot_usage:
+  name:
+    name: name
+    description: The name of the DefinedTermSet, e.g. the name of the ontology or
+      controlled vocabulary in which  the used  DefinedTerm is defined.
+    domain_of:
+    - Thing
+    required: true
 attributes:
   hasDefinedTerm:
     name: hasDefinedTerm
@@ -329,7 +361,10 @@ attributes:
     from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
     rank: 1000
     slot_uri: schema:hasDefinedTerm
+    multivalued: true
     range: DefinedTerm
+    inlined: true
+    inlined_as_list: true
 class_uri: schema:DefinedTermSet
 
 </code></pre>
@@ -341,6 +376,14 @@ description: A set of defined terms for example a set of categories or a classif
   scheme, a glossary, dictionary or enumeration.
 from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
 is_a: CreativeWork
+slot_usage:
+  name:
+    name: name
+    description: The name of the DefinedTermSet, e.g. the name of the ontology or
+      controlled vocabulary in which  the used  DefinedTerm is defined.
+    domain_of:
+    - Thing
+    required: true
 attributes:
   hasDefinedTerm:
     name: hasDefinedTerm
@@ -348,13 +391,16 @@ attributes:
     from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
     rank: 1000
     slot_uri: schema:hasDefinedTerm
+    multivalued: true
     alias: hasDefinedTerm
     owner: DefinedTermSet
     domain_of:
     - DefinedTermSet
     range: DefinedTerm
-  id:
-    name: id
+    inlined: true
+    inlined_as_list: true
+  identifier:
+    name: identifier
     description: A unique identifier for a thing
     from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
     exact_mappings:
@@ -362,7 +408,7 @@ attributes:
     rank: 1000
     slot_uri: schema:identifier
     identifier: true
-    alias: id
+    alias: identifier
     owner: DefinedTermSet
     domain_of:
     - Thing
@@ -399,10 +445,9 @@ attributes:
     range: string
   name:
     name: name
-    description: The name of the item.
+    description: The name of the DefinedTermSet, e.g. the name of the ontology or
+      controlled vocabulary in which  the used  DefinedTerm is defined.
     from_schema: https://w3id.org/stroemphi/DefinedTerm_profile
-    close_mappings:
-    - dct:title
     rank: 1000
     slot_uri: schema:name
     alias: name
@@ -410,6 +455,7 @@ attributes:
     domain_of:
     - Thing
     range: string
+    required: true
     recommended: true
   sameAs:
     name: sameAs
