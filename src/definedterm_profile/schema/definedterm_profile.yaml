@@ -64,8 +64,10 @@ classes:
       inDefinedTermSet:
         slot_uri: schema:inDefinedTermSet
         description: A DefinedTermSet that contains this term.
-        range: uriorcurie
+        range: DefinedTermSet
         required: true
+        multivalued: false
+        #inlined: true
         exact_mappings:
           - dct:conformsTo
       termCode:
