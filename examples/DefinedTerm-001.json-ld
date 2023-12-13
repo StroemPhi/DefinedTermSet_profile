@@ -1,8 +1,11 @@
 {
-  "id": "http://purl.obolibrary.org/obo/HP_0000271",
+  "identifier": "http://purl.obolibrary.org/obo/HP_0000271",
   "description": "This is an example instance of a defined term used in a schema.org based JSON-ld",
   "name": "Abnormality of the face",
-  "inDefinedTermSet": "http://purl.obolibrary.org/obo/hp/releases/2023-10-09/hp-base.owl",
+  "inDefinedTermSet": {
+    "identifier": "http://purl.obolibrary.org/obo/hp/releases/2023-10-09/hp-base.owl",
+    "name": "Human Phenotype Ontology"
+  },
   "termCode": "HP_0000271",
   "@type": "DefinedTerm",
   "@context": {
@@ -29,7 +32,7 @@
     "description": {
       "@id": "schema:description"
     },
-    "id": "@id",
+    "identifier": "@id",
     "name": {
       "@id": "schema:name"
     },
