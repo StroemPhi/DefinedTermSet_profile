@@ -27,7 +27,7 @@ classes:
   Thing:
     class_uri: schema:Thing
     slots:
-      - id
+      - identifier
       - alternateName
       - description
       - name
@@ -93,7 +93,7 @@ classes:
 slots:
 
 # Thing slots
-  id:
+  identifier:
     identifier: true
     slot_uri: schema:identifier
     range: uriorcurie
