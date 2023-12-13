@@ -1,5 +1,5 @@
 # Auto generated from definedterm_profile.yaml by pythongen.py version: 0.0.1
-# Generation date: 2023-12-12T21:15:54
+# Generation date: 2023-12-13T12:50:28
 # Schema: DefinedTerm_profile
 #
 # id: https://w3id.org/stroemphi/DefinedTerm_profile
@@ -42,23 +42,23 @@ DEFAULT_ = DEFINEDTERM_PROFILE
 # Types
 
 # Class references
-class ThingId(URIorCURIE):
+class ThingIdentifier(URIorCURIE):
     pass
 
 
-class IntangibleId(ThingId):
+class IntangibleIdentifier(ThingIdentifier):
     pass
 
 
-class CreativeWorkId(ThingId):
+class CreativeWorkIdentifier(ThingIdentifier):
     pass
 
 
-class DefinedTermId(IntangibleId):
+class DefinedTermIdentifier(IntangibleIdentifier):
     pass
 
 
-class DefinedTermSetId(CreativeWorkId):
+class DefinedTermSetIdentifier(CreativeWorkIdentifier):
     pass
 
 
@@ -74,7 +74,7 @@ class Thing(YAMLRoot):
     class_name: ClassVar[str] = "Thing"
     class_model_uri: ClassVar[URIRef] = DEFINEDTERM_PROFILE.Thing
 
-    id: Union[str, ThingId] = None
+    identifier: Union[str, ThingIdentifier] = None
     alternateName: Optional[Union[str, List[str]]] = empty_list()
     description: Optional[str] = None
     name: Optional[str] = None
@@ -82,10 +82,10 @@ class Thing(YAMLRoot):
     url: Optional[Union[str, URIorCURIE]] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, ThingId):
-            self.id = ThingId(self.id)
+        if self._is_empty(self.identifier):
+            self.MissingRequiredField("identifier")
+        if not isinstance(self.identifier, ThingIdentifier):
+            self.identifier = ThingIdentifier(self.identifier)
 
         if not isinstance(self.alternateName, list):
             self.alternateName = [self.alternateName] if self.alternateName is not None else []
@@ -119,13 +119,13 @@ class Intangible(Thing):
     class_name: ClassVar[str] = "Intangible"
     class_model_uri: ClassVar[URIRef] = DEFINEDTERM_PROFILE.Intangible
 
-    id: Union[str, IntangibleId] = None
+    identifier: Union[str, IntangibleIdentifier] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, IntangibleId):
-            self.id = IntangibleId(self.id)
+        if self._is_empty(self.identifier):
+            self.MissingRequiredField("identifier")
+        if not isinstance(self.identifier, IntangibleIdentifier):
+            self.identifier = IntangibleIdentifier(self.identifier)
 
         super().__post_init__(**kwargs)
 
@@ -142,13 +142,13 @@ class CreativeWork(Thing):
     class_name: ClassVar[str] = "CreativeWork"
     class_model_uri: ClassVar[URIRef] = DEFINEDTERM_PROFILE.CreativeWork
 
-    id: Union[str, CreativeWorkId] = None
+    identifier: Union[str, CreativeWorkIdentifier] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, CreativeWorkId):
-            self.id = CreativeWorkId(self.id)
+        if self._is_empty(self.identifier):
+            self.MissingRequiredField("identifier")
+        if not isinstance(self.identifier, CreativeWorkIdentifier):
+            self.identifier = CreativeWorkIdentifier(self.identifier)
 
         super().__post_init__(**kwargs)
 
@@ -168,25 +168,29 @@ class DefinedTerm(Intangible):
     class_name: ClassVar[str] = "DefinedTerm"
     class_model_uri: ClassVar[URIRef] = DEFINEDTERM_PROFILE.DefinedTerm
 
-    id: Union[str, DefinedTermId] = None
-    inDefinedTermSet: Union[str, URIorCURIE] = None
+    identifier: Union[str, DefinedTermIdentifier] = None
+    inDefinedTermSet: Union[dict, "DefinedTermSet"] = None
     termCode: str = None
+    sameAs: Optional[str] = None
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DefinedTermId):
-            self.id = DefinedTermId(self.id)
+        if self._is_empty(self.identifier):
+            self.MissingRequiredField("identifier")
+        if not isinstance(self.identifier, DefinedTermIdentifier):
+            self.identifier = DefinedTermIdentifier(self.identifier)
 
         if self._is_empty(self.inDefinedTermSet):
             self.MissingRequiredField("inDefinedTermSet")
-        if not isinstance(self.inDefinedTermSet, URIorCURIE):
-            self.inDefinedTermSet = URIorCURIE(self.inDefinedTermSet)
+        if not isinstance(self.inDefinedTermSet, DefinedTermSet):
+            self.inDefinedTermSet = DefinedTermSet(**as_dict(self.inDefinedTermSet))
 
         if self._is_empty(self.termCode):
             self.MissingRequiredField("termCode")
         if not isinstance(self.termCode, str):
             self.termCode = str(self.termCode)
+
+        if self.sameAs is not None and not isinstance(self.sameAs, str):
+            self.sameAs = str(self.sameAs)
 
         super().__post_init__(**kwargs)
 
@@ -204,17 +208,22 @@ class DefinedTermSet(CreativeWork):
     class_name: ClassVar[str] = "DefinedTermSet"
     class_model_uri: ClassVar[URIRef] = DEFINEDTERM_PROFILE.DefinedTermSet
 
-    id: Union[str, DefinedTermSetId] = None
-    hasDefinedTerm: Optional[Union[str, DefinedTermId]] = None
+    identifier: Union[str, DefinedTermSetIdentifier] = None
+    name: str = None
+    hasDefinedTerm: Optional[Union[Dict[Union[str, DefinedTermIdentifier], Union[dict, DefinedTerm]], List[Union[dict, DefinedTerm]]]] = empty_dict()
 
     def __post_init__(self, *_: List[str], **kwargs: Dict[str, Any]):
-        if self._is_empty(self.id):
-            self.MissingRequiredField("id")
-        if not isinstance(self.id, DefinedTermSetId):
-            self.id = DefinedTermSetId(self.id)
+        if self._is_empty(self.identifier):
+            self.MissingRequiredField("identifier")
+        if not isinstance(self.identifier, DefinedTermSetIdentifier):
+            self.identifier = DefinedTermSetIdentifier(self.identifier)
 
-        if self.hasDefinedTerm is not None and not isinstance(self.hasDefinedTerm, DefinedTermId):
-            self.hasDefinedTerm = DefinedTermId(self.hasDefinedTerm)
+        if self._is_empty(self.name):
+            self.MissingRequiredField("name")
+        if not isinstance(self.name, str):
+            self.name = str(self.name)
+
+        self._normalize_inlined_as_list(slot_name="hasDefinedTerm", slot_type=DefinedTerm, key_name="identifier", keyed=True)
 
         super().__post_init__(**kwargs)
 
@@ -226,8 +235,8 @@ class DefinedTermSet(CreativeWork):
 class slots:
     pass
 
-slots.id = Slot(uri=SCHEMA.identifier, name="id", curie=SCHEMA.curie('identifier'),
-                   model_uri=DEFINEDTERM_PROFILE.id, domain=None, range=URIRef)
+slots.identifier = Slot(uri=SCHEMA.identifier, name="identifier", curie=SCHEMA.curie('identifier'),
+                   model_uri=DEFINEDTERM_PROFILE.identifier, domain=None, range=URIRef)
 
 slots.name = Slot(uri=SCHEMA.name, name="name", curie=SCHEMA.curie('name'),
                    model_uri=DEFINEDTERM_PROFILE.name, domain=None, range=Optional[str])
@@ -245,10 +254,16 @@ slots.url = Slot(uri=SCHEMA.url, name="url", curie=SCHEMA.curie('url'),
                    model_uri=DEFINEDTERM_PROFILE.url, domain=None, range=Optional[Union[str, URIorCURIE]])
 
 slots.definedTerm__inDefinedTermSet = Slot(uri=SCHEMA.inDefinedTermSet, name="definedTerm__inDefinedTermSet", curie=SCHEMA.curie('inDefinedTermSet'),
-                   model_uri=DEFINEDTERM_PROFILE.definedTerm__inDefinedTermSet, domain=None, range=Union[str, URIorCURIE])
+                   model_uri=DEFINEDTERM_PROFILE.definedTerm__inDefinedTermSet, domain=None, range=Union[dict, DefinedTermSet])
 
 slots.definedTerm__termCode = Slot(uri=SCHEMA.termCode, name="definedTerm__termCode", curie=SCHEMA.curie('termCode'),
                    model_uri=DEFINEDTERM_PROFILE.definedTerm__termCode, domain=None, range=str)
 
 slots.definedTermSet__hasDefinedTerm = Slot(uri=SCHEMA.hasDefinedTerm, name="definedTermSet__hasDefinedTerm", curie=SCHEMA.curie('hasDefinedTerm'),
-                   model_uri=DEFINEDTERM_PROFILE.definedTermSet__hasDefinedTerm, domain=None, range=Optional[Union[str, DefinedTermId]])
+                   model_uri=DEFINEDTERM_PROFILE.definedTermSet__hasDefinedTerm, domain=None, range=Optional[Union[Dict[Union[str, DefinedTermIdentifier], Union[dict, DefinedTerm]], List[Union[dict, DefinedTerm]]]])
+
+slots.DefinedTerm_sameAs = Slot(uri=SCHEMA.sameAs, name="DefinedTerm_sameAs", curie=SCHEMA.curie('sameAs'),
+                   model_uri=DEFINEDTERM_PROFILE.DefinedTerm_sameAs, domain=DefinedTerm, range=Optional[str])
+
+slots.DefinedTermSet_name = Slot(uri=SCHEMA.name, name="DefinedTermSet_name", curie=SCHEMA.curie('name'),
+                   model_uri=DEFINEDTERM_PROFILE.DefinedTermSet_name, domain=DefinedTermSet, range=str)

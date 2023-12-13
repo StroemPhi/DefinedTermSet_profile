@@ -7,23 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-definedterm_profile:DefinedTermSet a owl:Class,
-        linkml:ClassDefinition ;
-    rdfs:label "DefinedTermSet" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty definedterm_profile:hasDefinedTerm ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom definedterm_profile:DefinedTerm ;
-            owl:onProperty definedterm_profile:hasDefinedTerm ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty definedterm_profile:hasDefinedTerm ],
-        definedterm_profile:CreativeWork ;
-    skos:definition "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration." ;
-    skos:exactMatch schema1:DefinedTermSet ;
-    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
-
 definedterm_profile:CreativeWork a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "CreativeWork" ;
@@ -36,26 +19,58 @@ definedterm_profile:DefinedTerm a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "DefinedTerm" ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty definedterm_profile:inDefinedTermSet ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:inDefinedTermSet ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:termCode ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom definedterm_profile:DefinedTermSet ;
+            owl:onProperty definedterm_profile:inDefinedTermSet ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:sameAs ],
+        [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty definedterm_profile:termCode ],
         [ a owl:Restriction ;
-            owl:minCardinality 1 ;
-            owl:onProperty definedterm_profile:termCode ],
+            owl:minCardinality 0 ;
+            owl:onProperty definedterm_profile:sameAs ],
         [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty definedterm_profile:inDefinedTermSet ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty definedterm_profile:inDefinedTermSet ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty definedterm_profile:termCode ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty definedterm_profile:sameAs ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty definedterm_profile:inDefinedTermSet ],
+            owl:onProperty definedterm_profile:termCode ],
         definedterm_profile:Intangible ;
     skos:definition "A word, name, acronym, phrase, etc. with a formal definition. Often used in the context of category or subject classification, glossaries or dictionaries, product or creative work types, etc. Use the name property for the term being defined, use termCode if the term has an alpha-numeric code allocated, use description to provide the definition of the term." ;
     skos:exactMatch schema1:DefinedTerm ;
+    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
+
+definedterm_profile:DefinedTermSet a owl:Class,
+        linkml:ClassDefinition ;
+    rdfs:label "DefinedTermSet" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty definedterm_profile:hasDefinedTerm ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty definedterm_profile:name ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom definedterm_profile:DefinedTerm ;
+            owl:onProperty definedterm_profile:hasDefinedTerm ],
+        [ a owl:Restriction ;
+            owl:minCardinality 1 ;
+            owl:onProperty definedterm_profile:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:name ],
+        definedterm_profile:CreativeWork ;
+    skos:definition "A set of defined terms for example a set of categories or a classification scheme, a glossary, dictionary or enumeration." ;
+    skos:exactMatch schema1:DefinedTermSet ;
     skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
 
 definedterm_profile:Intangible a owl:Class,
@@ -70,50 +85,50 @@ definedterm_profile:Thing a owl:Class,
         linkml:ClassDefinition ;
     rdfs:label "Thing" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty definedterm_profile:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty definedterm_profile:sameAs ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty definedterm_profile:url ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty definedterm_profile:id ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty definedterm_profile:description ],
-        [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty definedterm_profile:sameAs ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty definedterm_profile:alternateName ],
-        [ a owl:Restriction ;
-            owl:minCardinality 0 ;
-            owl:onProperty definedterm_profile:url ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty definedterm_profile:description ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:Uriorcurie ;
-            owl:onProperty definedterm_profile:url ],
-        [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty definedterm_profile:name ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom linkml:String ;
-            owl:onProperty definedterm_profile:alternateName ],
         [ a owl:Restriction ;
             owl:minCardinality 1 ;
-            owl:onProperty definedterm_profile:id ],
+            owl:onProperty definedterm_profile:identifier ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty definedterm_profile:identifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:name ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:url ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:identifier ],
+        [ a owl:Restriction ;
+            owl:maxCardinality 1 ;
+            owl:onProperty definedterm_profile:description ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:Uriorcurie ;
+            owl:onProperty definedterm_profile:url ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty definedterm_profile:sameAs ],
         [ a owl:Restriction ;
             owl:minCardinality 0 ;
             owl:onProperty definedterm_profile:name ],
         [ a owl:Restriction ;
-            owl:maxCardinality 1 ;
-            owl:onProperty definedterm_profile:id ],
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty definedterm_profile:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty definedterm_profile:url ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty definedterm_profile:description ],
+        [ a owl:Restriction ;
+            owl:minCardinality 0 ;
+            owl:onProperty definedterm_profile:alternateName ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom linkml:String ;
+            owl:onProperty definedterm_profile:alternateName ],
         [ a owl:Restriction ;
             owl:allValuesFrom linkml:String ;
             owl:onProperty definedterm_profile:name ],
@@ -131,6 +146,12 @@ definedterm_profile:alternateName a owl:ObjectProperty,
     skos:exactMatch dct:alternative ;
     skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
 
+definedterm_profile:hasDefinedTerm a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "hasDefinedTerm" ;
+    skos:definition "A Defined Term contained in this term set." ;
+    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
+
 definedterm_profile:description a owl:ObjectProperty,
         linkml:SlotDefinition ;
     rdfs:label "description" ;
@@ -138,15 +159,9 @@ definedterm_profile:description a owl:ObjectProperty,
     skos:exactMatch dct:description ;
     skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
 
-definedterm_profile:hasDefinedTerm a owl:ObjectProperty,
+definedterm_profile:identifier a owl:ObjectProperty,
         linkml:SlotDefinition ;
-    rdfs:label "hasDefinedTerm" ;
-    skos:definition "A Defined Term contained in this term set." ;
-    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
-
-definedterm_profile:id a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "id" ;
+    rdfs:label "identifier" ;
     rdfs:range linkml:Uriorcurie ;
     skos:definition "A unique identifier for a thing" ;
     skos:exactMatch dct:identifier ;
@@ -157,19 +172,6 @@ definedterm_profile:inDefinedTermSet a owl:ObjectProperty,
     rdfs:label "inDefinedTermSet" ;
     skos:definition "A DefinedTermSet that contains this term." ;
     skos:exactMatch dct:conformsTo ;
-    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
-
-definedterm_profile:name a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "name" ;
-    skos:closeMatch dct:title ;
-    skos:definition "The name of the item." ;
-    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
-
-definedterm_profile:sameAs a owl:ObjectProperty,
-        linkml:SlotDefinition ;
-    rdfs:label "sameAs" ;
-    skos:definition "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
     skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
 
 definedterm_profile:termCode a owl:ObjectProperty,
@@ -184,6 +186,19 @@ definedterm_profile:url a owl:ObjectProperty,
     rdfs:label "url" ;
     rdfs:range linkml:Uriorcurie ;
     skos:definition "URL of the item." ;
+    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
+
+definedterm_profile:name a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "name" ;
+    skos:closeMatch dct:title ;
+    skos:definition "The name of the item." ;
+    skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
+
+definedterm_profile:sameAs a owl:ObjectProperty,
+        linkml:SlotDefinition ;
+    rdfs:label "sameAs" ;
+    skos:definition "URL of a reference Web page that unambiguously indicates the item's identity.  E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website." ;
     skos:inScheme <https://w3id.org/stroemphi/DefinedTerm_profile> .
 
 <https://w3id.org/stroemphi/DefinedTerm_profile> a owl:Ontology ;

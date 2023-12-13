@@ -15,7 +15,7 @@
                     "description": "A description of the item.",
                     "type": "string"
                 },
-                "id": {
+                "identifier": {
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
@@ -33,7 +33,7 @@
                 }
             },
             "required": [
-                "id"
+                "identifier"
             ],
             "title": "CreativeWork",
             "type": "object"
@@ -53,13 +53,13 @@
                     "description": "A description of the item.",
                     "type": "string"
                 },
-                "id": {
+                "identifier": {
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
                 "inDefinedTermSet": {
-                    "description": "A DefinedTermSet that contains this term.",
-                    "type": "string"
+                    "$ref": "#/$defs/DefinedTermSet",
+                    "description": "A DefinedTermSet that contains this term."
                 },
                 "name": {
                     "description": "The name of the item.",
@@ -81,7 +81,7 @@
             "required": [
                 "inDefinedTermSet",
                 "termCode",
-                "id"
+                "identifier"
             ],
             "title": "DefinedTerm",
             "type": "object"
@@ -103,14 +103,17 @@
                 },
                 "hasDefinedTerm": {
                     "description": "A Defined Term contained in this term set.",
-                    "type": "string"
+                    "items": {
+                        "$ref": "#/$defs/DefinedTerm"
+                    },
+                    "type": "array"
                 },
-                "id": {
+                "identifier": {
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
                 "name": {
-                    "description": "The name of the item.",
+                    "description": "The name of the DefinedTermSet, e.g. the name of the ontology or controlled vocabulary in which  the used  DefinedTerm is defined.",
                     "type": "string"
                 },
                 "sameAs": {
@@ -123,7 +126,8 @@
                 }
             },
             "required": [
-                "id"
+                "identifier",
+                "name"
             ],
             "title": "DefinedTermSet",
             "type": "object"
@@ -143,7 +147,7 @@
                     "description": "A description of the item.",
                     "type": "string"
                 },
-                "id": {
+                "identifier": {
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
@@ -161,7 +165,7 @@
                 }
             },
             "required": [
-                "id"
+                "identifier"
             ],
             "title": "Intangible",
             "type": "object"
@@ -181,7 +185,7 @@
                     "description": "A description of the item.",
                     "type": "string"
                 },
-                "id": {
+                "identifier": {
                     "description": "A unique identifier for a thing",
                     "type": "string"
                 },
@@ -199,7 +203,7 @@
                 }
             },
             "required": [
-                "id"
+                "identifier"
             ],
             "title": "Thing",
             "type": "object"
@@ -222,13 +226,13 @@
             "description": "A description of the item.",
             "type": "string"
         },
-        "id": {
+        "identifier": {
             "description": "A unique identifier for a thing",
             "type": "string"
         },
         "inDefinedTermSet": {
-            "description": "A DefinedTermSet that contains this term.",
-            "type": "string"
+            "$ref": "#/$defs/DefinedTermSet",
+            "description": "A DefinedTermSet that contains this term."
         },
         "name": {
             "description": "The name of the item.",
@@ -250,7 +254,7 @@
     "required": [
         "inDefinedTermSet",
         "termCode",
-        "id"
+        "identifier"
     ],
     "title": "DefinedTerm_profile",
     "type": "object",
