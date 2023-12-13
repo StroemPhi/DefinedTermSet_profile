@@ -1,6 +1,6 @@
 type CreativeWork
   {
-    id: Uriorcurie!
+    identifier: Uriorcurie!
     alternateName: [String]
     description: String
     name: String
@@ -10,30 +10,30 @@ type CreativeWork
 
 type DefinedTerm
   {
-    id: Uriorcurie!
+    identifier: Uriorcurie!
     alternateName: [String]
     description: String
     name: String
-    sameAs: String
     url: Uriorcurie
-    inDefinedTermSet: Uriorcurie!
+    inDefinedTermSet: DefinedTermSet!
     termCode: String!
+    sameAs: String
   }
 
 type DefinedTermSet
   {
-    id: Uriorcurie!
+    identifier: Uriorcurie!
     alternateName: [String]
     description: String
-    name: String
     sameAs: String
     url: Uriorcurie
-    hasDefinedTerm: DefinedTerm
+    hasDefinedTerm: [DefinedTerm]
+    name: String!
   }
 
 type Intangible
   {
-    id: Uriorcurie!
+    identifier: Uriorcurie!
     alternateName: [String]
     description: String
     name: String
@@ -43,7 +43,7 @@ type Intangible
 
 type Thing
   {
-    id: Uriorcurie!
+    identifier: Uriorcurie!
     alternateName: [String]
     description: String
     name: String

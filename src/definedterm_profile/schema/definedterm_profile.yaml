@@ -27,7 +27,7 @@ classes:
   Thing:
     class_uri: schema:Thing
     slots:
-      - id
+      - identifier
       - alternateName
       - description
       - name
@@ -51,6 +51,12 @@ classes:
 
 
   DefinedTerm:
+    description: >-
+      A word, name, acronym, phrase, etc. with a formal definition. Often used in
+      the context of category or subject classification, glossaries or dictionaries,
+      product or creative work types, etc. Use the name property for the term being
+      defined, use termCode if the term has an alpha-numeric code allocated, use description
+      to provide the definition of the term.
     tree_root: true
     class_uri: schema:DefinedTerm
     is_a: Intangible
@@ -58,8 +64,10 @@ classes:
       inDefinedTermSet:
         slot_uri: schema:inDefinedTermSet
         description: A DefinedTermSet that contains this term.
-        range: uriorcurie
+        range: DefinedTermSet
         required: true
+        multivalued: false
+        inlined: true
         exact_mappings:
           - dct:conformsTo
       termCode:
@@ -69,14 +77,17 @@ classes:
         comments:
           - In the REST response of an OLS based look-up service (e.g. https://service.tib.eu/ts4tib/api/) this would
             correspond to the `short_form` key.
-    description: >-
-      A word, name, acronym, phrase, etc. with a formal definition. Often used in
-      the context of category or subject classification, glossaries or dictionaries,
-      product or creative work types, etc. Use the name property for the term being
-      defined, use termCode if the term has an alpha-numeric code allocated, use description
-      to provide the definition of the term.
+    slot_usage:
+      sameAs:
+        recommended: true
+        comments:
+          - Use this to link to other DefinedTermSets that define the same DefinedTerm
+
 
   DefinedTermSet:
+    description: >-
+      A set of defined terms for example a set of categories or a classification scheme,
+      a glossary, dictionary or enumeration.
     class_uri: schema:DefinedTermSet
     is_a: CreativeWork
     attributes:
@@ -84,14 +95,20 @@ classes:
         slot_uri: schema:hasDefinedTerm
         range: DefinedTerm
         description: A Defined Term contained in this term set.
-    description: >-
-      A set of defined terms for example a set of categories or a classification scheme,
-      a glossary, dictionary or enumeration.
+        multivalued: true
+        inlined_as_list: true
+    slot_usage:
+      name:
+        required: true
+        description: >-
+          The name of the DefinedTermSet, e.g. the name of the ontology or controlled vocabulary in which  the used 
+          DefinedTerm is defined.
+
 
 slots:
 
 # Thing slots
-  id:
+  identifier:
     identifier: true
     slot_uri: schema:identifier
     range: uriorcurie
@@ -104,7 +121,6 @@ slots:
     recommended: true
     close_mappings:
       - dct:title
-
   alternateName:
     slot_uri: schema:alternateName
     description: An alias for the item.
@@ -112,13 +128,11 @@ slots:
     inlined_as_list: true
     exact_mappings:
       - dct:alternative
-
   description:
     slot_uri: schema:description
     description: A description of the item.
     exact_mappings:
       - dct:description
-
   sameAs:
     slot_uri: schema:sameAs
     description:  >-

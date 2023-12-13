@@ -56,8 +56,9 @@ linkml:Sparqlpath xsd:string
 <DefinedTerm> CLOSED {
     (  $<DefinedTerm_tes> (  &<Intangible_tes> ;
           rdf:type [ schema1:Intangible ] ? ;
-          schema1:inDefinedTermSet @linkml:Uriorcurie ;
-          schema1:termCode @linkml:String
+          schema1:inDefinedTermSet @<DefinedTermSet> ;
+          schema1:termCode @linkml:String ;
+          schema1:sameAs @linkml:String ?
        ) ;
        rdf:type [ schema1:DefinedTerm ]
     )
@@ -66,7 +67,8 @@ linkml:Sparqlpath xsd:string
 <DefinedTermSet> CLOSED {
     (  $<DefinedTermSet_tes> (  &<CreativeWork_tes> ;
           rdf:type [ schema1:CreativeWork ] ? ;
-          schema1:hasDefinedTerm @<DefinedTerm> ?
+          schema1:hasDefinedTerm @<DefinedTerm> * ;
+          schema1:name @linkml:String
        ) ;
        rdf:type [ schema1:DefinedTermSet ]
     )
