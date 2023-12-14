@@ -70,6 +70,8 @@ classes:
         inlined: true
         exact_mappings:
           - dct:conformsTo
+        comments:
+          - The decision to make this a required property is based on the fact that it is only used on DefinedTerm
       termCode:
         slot_uri: schema:termCode
         description: A code that identifies this DefinedTerm within a DefinedTermSet.
@@ -77,6 +79,7 @@ classes:
         comments:
           - In the REST response of an OLS based look-up service (e.g. https://service.tib.eu/ts4tib/api/) this would
             correspond to the `short_form` key.
+          - The decision to make this a required property is based on the fact that it is only used on DefinedTerm
     slot_usage:
       sameAs:
         recommended: true
@@ -143,3 +146,6 @@ slots:
     slot_uri: schema:url
     description: URL of the item.
     range: uriorcurie
+    comments:
+      - This slot MUST not be used to provide an IRI for an ontology or an ontology term, use schema:identifier for
+        this. The range (expected type) of schema:url is an URL.
